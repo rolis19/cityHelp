@@ -43,10 +43,11 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
 	background-color: #F5F5F5;
 }
-.nav-pills>li>a{
+.navbar-right>li>a{
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	color:#494D50;
+	text-transform: uppercase;
+	font-weight: 400;
+	color:#514C4C;
 	font-size: 22px;
 	height: 60px;
 }
