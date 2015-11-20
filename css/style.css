@@ -90,7 +90,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .part3{
 	background-color: #d1dbe5;
-	padding-top:90px;
+	padding-top:60px;
+	padding-bottom: 30px;
+	
 }
 .ctpi,.pcag {
 	display:inline-table;
@@ -104,3 +106,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .prob {
 }
+footer{
+	background-color:#462b22;
+	color: #fff;
+	padding : 20px 0;
+	}
+.copyright {
+	padding-top:10px;
+	text-align:center;}
