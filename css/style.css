@@ -9,19 +9,34 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
+.main-header {
+	background: rgba(45, 32, 9, 0.8);
+	padding: 20px 40px 0px 40px;
+}
 
 .hero{
-	height: 420px;
+	height: auto;
 	color: #FFF;
 	width: 75%;
 	margin: 0 auto;
-	margin-top: 200px;
+	margin-top: 50px;
+	margin-bottom: 110px;
+	padding: 10px 0;
 }
 .hero h1 {
 	font-size: 3em;
+	text-transform: uppercase;
 }
 .hero p {
-	font-weight: 700;
+	font-weight: 400;
+}
+.user {
+	float: right;
+	display: inline-table;
+	margin-bottom: 20px;
+}
+.user a {
+	color: #FFF;
 }
 .btn-success{
 	color:#fff;
@@ -42,14 +57,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar {
 	background-color: #F5F5F5;
+	border-radius: 0;
 }
+
 .navbar-right>li>a{
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	font-weight: 400;
 	color:#514C4C;
-	font-size: 22px;
-	height: 60px;
+	font-size: 18px;
+	height: 100px;
+	padding-top: 40px;
 }
 .part1 {
 	color:#919191;
