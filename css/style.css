@@ -93,6 +93,9 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #F8F8F8;
 	padding-top:90px;
 	padding-bottom: 70px;
+	background-color: #d1dbe5;
+	padding-top:60px;
+	padding-bottom: 30px;
 }
 .ctpi,.pcag {
 	display:inline-table;
@@ -106,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .prob {
 }
+
 .form-control {
 	width: 70%;
 	height: 52px;
@@ -126,4 +130,16 @@ h1, h2, h3, h4, h5, h6 {
 .modal-body hr {
 	width: 60%;
 }
-/*https://nakupanda.github.io/bootstrap3-dialog/*/
+/*https://nakupanda.github.io/bootstrap3-dialog/ */
+
+footer{
+	background-color:#462b22;
+	color: #fff;
+	padding : 30px 0;
+	}
+footer ul li {
+	list-style: none;
+}
+.copyright {
+	padding-top:10px;
+	text-align:center;}
