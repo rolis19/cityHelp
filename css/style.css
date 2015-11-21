@@ -34,13 +34,23 @@ h1, h2, h3, h4, h5, h6 {
 	float: right;
 	display: inline-table;
 	margin-bottom: 20px;
+	margin-right: 40px;
 }
 .user a {
 	color: #FFF;
 	padding: 0 10px;
+	cursor: pointer;
 }
 .user .batas {
 	border-right: 1px solid #FFF;
+}
+.dropdown-menu {
+	margin: 40% -150% 0;
+}
+.dropdown-menu a{
+	font-size: 16px;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
 }
 .btn-success{
 	color:#fff;
