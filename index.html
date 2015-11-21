@@ -21,8 +21,8 @@
 						<a href="#" class="btn btn-success btn-lg">DEMO <i class="glyphicon glyphicon-play"> </i></a>
 					</div>
 					<div class="user">
-						<a href="">SIGN UP</a>
-						<a href="">LOGIN</a>
+						<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
+						<a href="#modal-login" role="button" data-toggle="modal">LOGIN</a>
 						<img src="img/user.png" alt="" width="50px">
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-
+						<img src="img/Broken-Road.jpg" alt="" class="img-responsive">
 					</div>
 					<div class="col-md-6">
 						<div class="ctpi">
@@ -65,7 +65,7 @@
 						<div class="pcag">
 							<p> Pariwisata </p>
 							<p> Complain </p>
-							<p> Anonymus </p>
+							<p> Bima Yudi Prasetya </p>
 							<p> Goverment </p>
 						</div>
 						<div class="clearfix"></div>
@@ -73,7 +73,8 @@
 							<h3> Problem Title </h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit, eu ornare magna. Nam convallis mattis urna, </p>
 						</div>
-							<button type="button" class="btn btn-success"> Read City Profile </button>
+							<p><small>*see all responder detail and decision</small></p>
+							<button type="button" class="btn btn-success btn-lg">READ MORE</button>
 					</div>
 				</div>
 				<div class="row">
@@ -90,15 +91,89 @@
 						<button type="button" class="btn btn-success"> Read City Profile </button>
 					</div>
  					 <div class="cuaca col-md-6 text-center">
-						<h3>Semarang Utara</h3>
-						<img src="img/wheather.png" class="img-responsive" >
-						
+
+
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- All Modal Placed in here -->
+		<div id="modal-sign" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="" role="form">
+							<div class="form-group">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="VALID EMAIL">
+							</div>
+						</form>
+						<a href="#modal-signup" role="button" data-toggle="modal" data-dismiss="modal" aria-hidden="true">SIGN UP</a>
+						<hr width="60%">
+						<p>USE SIGN UP ALTERNATIVE</p>
+						<div class="sosmed">
+							<img src="img/fb.png" alt="">
+							<img src="img/twt.png" alt="">
+							<img src="img/gog.png" alt="">
+						</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 
+	    <div id="modal-login" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="" role="form">
+							<div class="form-group">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME OR EMAIL">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+							</div>
+						</form>
+						<button type="button" class="btn btn-success btn-lg">SIGN IN</button>
+						<hr width="60%">
+						<p>USE LOGIN ALTERNATIVE</p>
+						<div class="sosmed">
+							<img src="img/fb.png" alt="">
+							<img src="img/twt.png" alt="">
+							<img src="img/gog.png" alt="">
+						</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 
+		<div id="modal-signup" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="" role="form">
+							<div class="form-group">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME OR EMAIL">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="PASSWORD">
+							</div>
+						</form>
+						<button type="button" class="btn btn-success btn-lg">SIGN UP</button>
+						<hr width="60%">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+		<!-- Ky Footer start dari sini -->
 	<script src="js/jquery.waypoints.js"></script>
 	<script src="js/parallax.js"></script>
 	<script src="js/init.js"></script>
