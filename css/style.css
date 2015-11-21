@@ -97,6 +97,9 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top:60px;
 	padding-bottom: 30px;
 }
+.feature-child {
+	margin-top: 22px;
+}
 .ctpi,.pcag {
 	display:inline-table;
 }
