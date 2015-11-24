@@ -3,6 +3,9 @@
 $('.home').parallax({imageSrc: 'img/head.jpg'});
 document.createElement("section");
 
+$('.infrastructure').parallax({imageSrc: 'img/infra.jpg'});
+document.createElement("section");
+
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("navbar-down");
