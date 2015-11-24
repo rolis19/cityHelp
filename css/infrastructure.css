@@ -1,0 +1,31 @@
+
+.categ-menu {
+	padding-bottom: 20px;
+}
+.categ-menu a {
+	color: #01C26F;
+	text-decoration: none;
+}
+.categ-menu div {
+	display: inline-table;
+}
+.bullet {
+	width: 15px; height: 15px;
+	background: white;
+	border-radius: 50%;
+}
+.panel-body {
+	background: #E3E3E3;
+}
+.panel-footer {
+	background: #01C26F;
+}
+.panel-body table {
+	margin-top: 20px;
+}
+.panel-body td {
+	padding-right: 14px;
+}
+.headli {
+	font-weight: bold;
+}
