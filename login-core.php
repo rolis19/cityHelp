@@ -9,7 +9,7 @@
 
 	if($status) {
 		$_SESSION['login'] = true;
-		header('location:member/')
+		header('location:member/');
 	} else {
 		header('location:index.html');
 	}
