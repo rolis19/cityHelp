@@ -1,0 +1,15 @@
+.back {
+	background-image: url("head.jpg");
+	height: 600px;
+}
+.login-admin {
+	width: 26%;
+	margin: 0 auto;
+	margin-top: 200px;
+}
+form {
+	padding: 10px;
+}
+form input {
+	margin-top: 10px;
+}
