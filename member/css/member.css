@@ -1,0 +1,26 @@
+.part3 {
+	margin-top: -20px;
+}
+
+.profile-area1, .profile-area2 {
+	height: 480px;
+	margin-bottom: 40px;
+	padding-top: 20px;
+}
+.profile-area1 {
+	background: #FFF;
+}
+.profile-area2 {
+	background: #E6E8F2;
+}
+.profile-area1 ul {
+	margin: 30px 0;
+}
+.profile-area1 ul li{
+	list-style: none;
+	text-indent: -10px;
+	margin-bottom: 8px;
+}
+.profile-area1 ul li a{
+	text-decoration: none;
+}
