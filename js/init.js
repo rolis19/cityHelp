@@ -6,6 +6,11 @@ document.createElement("section");
 $('.infrastructure').parallax({imageSrc: 'img/infra.jpg'});
 document.createElement("section");
 
+$('.tourism').parallax({imageSrc: 'img/tourism.jpg'});
+document.createElement("section");
+
+$('.social').parallax({imageSrc: 'img/})
+
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("navbar-down");
