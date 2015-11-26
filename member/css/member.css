@@ -24,3 +24,7 @@
 .profile-area1 ul li a{
 	text-decoration: none;
 }
+.well {
+	box-shadow: none;
+	background: #FFF;
+}
