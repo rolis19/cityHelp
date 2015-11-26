@@ -1,18 +1,21 @@
 <?php
+	require_once 'connection.php';
 	session_start();
 
-	include "conn.php";
+	$name = mysql_real_escape_string($_POST['full_name']);
+	$username = mysql_real_escape_string($_POST['username']);
+	$email = mysql_real_escape_string($_POST['email']);
+	$password = mysql_real_escape_string($_POST['password']);
+	$secretkey = "SmArTcItY";
+	$key = md5($password+$secretkey);
+	$query = mysql_query("INSERT INTO member VALUES(NULL, '$name', '$username', '$key', '$email') ");
 
-	$Name = mysql_real_escape_string($_POST['Name']);
-	$Username = mysql_real_escape_string($_POST['Username']);
-	$Email = mysql_real_escape_string($_POST['Email']);
-	$_SESSION["Email"] = $Email;
-	$Password = mysql_real_escape_string($_POST['Password']);
-	$ConfirmPassword = mysql_real_escape_string($_POST['ConfirmPassword'])
-	$query = "INSERT INTO 'User' (Name,Username,Email,Password,ConfirmPassword) VALUES ('$Name','$Username','$Email','$Password','$ConfirmPassword')";
-	
-echo"<script language = 'Javascript'>
-      alert('Registration success!')
-      location.href = 'index.html'</script>";
-
+	if($query) {
+		$_SESSION['login'] = true;
+		$_SESSION['type'] = "user";
+		$_SESSION['username'] = $username;
+		header('location:member/');
+	} else {
+		header('location:index.html?status=Register Fail');
+	}
 ?>

@@ -9,6 +9,8 @@
 
 	if($status) {
 		$_SESSION['login'] = true;
+		$_SESSION['type'] = "user";
+		$_SESSION['username'] = $user;
 		header('location:member/');
 	} else {
 		header('location:index.html');
