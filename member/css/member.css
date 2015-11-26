@@ -1,9 +1,18 @@
+
+
+.btn-default {
+	border-radius: 20px;
+	margin-right: 10px;
+	font-weight: 700;
+}
 .part3 {
 	margin-top: -20px;
 }
 
 .profile-area1, .profile-area2 {
-	height: 480px;
+	min-height: 480px;
+	height: auto;
+	padding-bottom: 30px;
 	margin-bottom: 40px;
 	padding-top: 20px;
 }
@@ -18,8 +27,6 @@
 }
 .profile-area1 ul li{
 	list-style: none;
-	text-indent: -10px;
-	margin-bottom: 8px;
 }
 .profile-area1 ul li a{
 	text-decoration: none;
@@ -27,4 +34,68 @@
 .well {
 	box-shadow: none;
 	background: #FFF;
+}
+.form-group {
+	width: 100%;
+}
+.form-control {
+	height: 42px;
+	margin: 0;
+}
+label {
+	float: left;
+}
+.inputctg {
+	width: 30%;
+}
+.inputtype {
+	width: 33%;
+}
+.inputtag {
+	width: 30%;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+  background-color: #4A8FE2;
+  color: #fff;
+}
+.tab-content {
+	margin-top: 40px;
+}
+.tab-content .form-control{
+	background: #FFF;
+	width: 40%;
+}
+.tab-content .aboutme{
+	margin-right: 20px;
+}
+.tab-content ul li{
+	list-style: none;
+	text-indent: -36px;
+}
+.tab-content .grafik {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: #FF8002;
+	vertical-align: top;
+}
+.postgoverment {
+	background: #BAF874;
+	margin: 0;
+	padding: 20px;
+}
+.postinfras {
+	background: #E6FE9B;
+	margin: 0;
+	padding: 20px;
+}
+.postekonomi {
+	background: #FFD264;
+	margin: 0;
+	padding: 20px;
+}
+.posttourism {
+	background: #FAF66F;
+	margin: 0;
+	padding: 20px;
 }
