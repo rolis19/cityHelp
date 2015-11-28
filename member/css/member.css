@@ -58,9 +58,6 @@ label {
   background-color: #4A8FE2;
   color: #fff;
 }
-.tab-content {
-	margin-top: 40px;
-}
 .tab-content .form-control{
 	background: #FFF;
 	width: 40%;
@@ -79,23 +76,24 @@ label {
 	background: #FF8002;
 	vertical-align: top;
 }
-.postgoverment {
-	background: #BAF874;
+.editprof {
+	margin-top: 30px;
+}
+.postodd {
 	margin: 0;
 	padding: 20px;
 }
-.postinfras {
-	background: #E6FE9B;
+.posteven {
+	background: #F2F3F7;
 	margin: 0;
 	padding: 20px;
 }
-.postekonomi {
-	background: #FFD264;
-	margin: 0;
-	padding: 20px;
+.posttop {
+	margin-top: 20px;
 }
-.posttourism {
-	background: #FAF66F;
-	margin: 0;
-	padding: 20px;
+.solution p {
+	background: #FFF;
+	border: 2px dotted #DDD;
+	border-radius: 5px;
+	padding: 15px;
 }
