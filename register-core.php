@@ -6,7 +6,7 @@
 	$username = mysql_real_escape_string($_POST['username']);
 	$email = mysql_real_escape_string($_POST['email']);
 	$password = mysql_real_escape_string($_POST['password']);
-	$secretkey = "SmArTcItY";
+	$secretkey = "smartcity";
 	$key = md5($password+$secretkey);
 	$query = mysql_query("INSERT INTO member VALUES(NULL, '$name', '$username', '$key', '$email') ");
 
