@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Smart City</title>
+		<title>Infrastructure - Smart City</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -77,19 +77,34 @@
 				</div>
 			</div>
 		</section>
-		<div class="border-green"> </div>
+		<div class="border-green"></div>
 
-		<nav class="navbar">
+		<nav class="navbar navbar-default" role = "navigation">
 			<div class="container-fluid">
-			<div class="logo"><a href="index.html"><img src="img/logo.png" width="200px" style="float: left"></a></div>
-				<ul class="nav navbar-nav navbar-right">
-					<li role="presentation" ><a href="social.html">Social</a></li>
-					<li role="presentation" class=""><a href="infrastructure.html">Infrastructure</a></li>
-					<li role="presentation"><a href="economy.html">Economy</a></li>
-					<li role="presentation"><a href="tourism.html">Tourism</a></li>		
-				</ul>
+				<div class="row fix-menu">
+					<div class="navbar-header">
+		  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+		  					<span class="sr-only">Toggle navigation</span>
+		  					<span class="icon-bar"></span>
+		  					<span class="icon-bar"></span>
+		  					<span class="icon-bar"></span>
+		  				</button>
+					<!-- Your Logo --> 
+		  			<div class="logo"><img src="img/logo.png" width="200px"></div>
+					</div>
+					<!-- Start Navigation -->
+		  			<div class="collapse navbar-collapse" id="collapse" role="navigation">
+			  			<ul class="nav navbar-nav navbar-right">
+			  				<li><a href="goverment.html">Government</a></li>
+							<li class="active"><a href="infrastructure.html">Infrastructure</a></li>
+							<li><a href="economy.html">Economy</a></li>
+							<li><a href="tourism.html">Tourism</a></li>	
+			  			</ul>
+					</div>
+				</div>		
 			</div>
-		</nav>
+	  	</nav>
+
 			<div class="container main-post	">
 				<div class="row">
 					<div class="col-md-4">
@@ -303,6 +318,12 @@
 	<script src="js/jquery.waypoints.js"></script>
 	<script src="js/parallax.js"></script>
 	<script src="js/init.js"></script>
+	<script>
+		$(".nav a").on("click", function(){
+		   $(".nav").find(".active").removeClass("active");
+		   $(this).parent().addClass("active");
+		});
+	</script>
 	</body>
 </html>
 
