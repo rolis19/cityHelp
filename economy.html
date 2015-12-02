@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/social.css">
+		<link rel="stylesheet" href="css/economy.css">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -50,28 +50,28 @@
 				}
 			}
 		</script>
-		
 	</head>
 	<body>
 		<section class="infrastructure" data-parallax="scroll">
 			<div class="container-fluid">
 				<div class="row main-header">
 					<div class="hero text-center">
-						<h1>SOCIAL</h1>
+						<h1>ECONOMY</h1>
 						<div class="categ-menu">
-							<a href="#"> ? </a>
+							<a href=".html">???</a>
 							<div class="bullet"></div>
-							<a href="#">? </a>
+							<a href=".html">???</a>
 							<div class="bullet"></div>
-							<a href="#">? </a>
+							<a href=".html">????</a>
 							<div class="bullet"></div>
-							<a href="#">? </a>
+							<a href=".html">All</a>
 						</div>
-						<a href="#" class="btn btn-success btn-lg">INFRASTRUCTURE DATA</a>
+						<a href="#" class="btn btn-success btn-lg">ECONOMY DATA</a>
 					</div>
 					<div class="user">
 						<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
 						<a href="#modal-login" role="button" data-toggle="modal">LOGIN</a>
+						
 						<img src="img/user.png" alt="" width="50px">
 					</div>
 				</div>
@@ -83,9 +83,9 @@
 			<div class="container-fluid">
 			<div class="logo"><a href="index.html"><img src="img/logo.png" width="200px" style="float: left"></a></div>
 				<ul class="nav navbar-nav navbar-right">
-					<li role="presentation" class=""><a href="social.html">Social</a></li>
+					<li role="presentation" ><a href="social.html">Social</a></li>
 					<li role="presentation"><a href="infrastructure.html">Infrastructure</a></li>
-					<li role="presentation"><a href="economy.html">Economy</a></li>
+					<li role="presentation" class=""><a href="economy.html">Economy</a></li>
 					<li role="presentation"><a href="tourism.html">Tourism</a></li>		
 				</ul>
 			</div>
@@ -93,8 +93,8 @@
 			<div class="container main-post	">
 				<div class="row">
 					<div class="col-md-4">
-						<h3>regional assets </h3>
-						<small>(?)// Review</small>
+						<h3>??????</h3>
+						<small>Simpang Lima Semarang// Review</small>
 						<div class="panel-body">
 							<img src="img/infra-city.jpg"  alt="" class="img-responsive img-thumbnail">
 							<table>
@@ -115,7 +115,7 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<h3>(?)</h3>
+						<h3>????</h3>
 						<small>JL. Terminal Terboyo// Review</small>
 						<div class="panel-body">
 							<img src="img/infra-transportation.jpg"   alt="" class="img-responsive img-thumbnail">
@@ -234,6 +234,27 @@
 	    </div>
 
 		<div id="modal-signup" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close modal2" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="register-core.php" role="form" method="POST">
+							<div class="form-group">
+								<input type="text" name="full_name" id="name" class="form-control" placeholder="Full Name">
+								<input type="text" name="username" id="username" class="form-control" placeholder="Username">
+								<input type="email" name="email" id="email" class="form-control" placeholder="Email" readonly>
+								<input type="password" name="pass" id="pass" onkeyup="validate()" class="form-control" placeholder="Password">
+								<input type="password" name="confirm_pass" id="confirm_pass" onkeyup="validate()" class="form-control" placeholder="Confirm Password">
+							</div>
+							<button type="submit" class="btn btn-success btn-lg">SIGN UP</button>
+						</form>
+						<hr width="60%">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 		
 		<footer>
 			<div class="abfooter">
