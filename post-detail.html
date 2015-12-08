@@ -6,10 +6,27 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/post-detail.css">
+		<link rel="stylesheet"  href="css/lightslider.css"/>
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/lightslider.js"></script> 
 		
+		 <script>
+    	      $(document).ready(function() {
+	        $('#vertical').lightSlider({
+	          gallery:true,
+	          item:1,
+	          vertical:true,
+	          verticalHeight:500,
+	          vThumbWidth:70,
+	          thumbItem:8,
+	          thumbMargin:4,
+	          slideMargin:0,
+	          adaptiveHeight: true
+	        });  
+	      });
+    	</script>
 	</head>
 	<body>
 		<section class="infrastructure">
@@ -51,14 +68,26 @@
 		</nav>
 			<div class="container main-post	">
 				<div class="row">
-					<div class="col-md-8 main-img">
-						<div><img src="img/prob2.png" alt="" class="img-responsive" style="float:left"></div>
-						<div><ul>
-							<li class="img-top"><img src="img/prob1.png" alt="" class="img-responsive img-thumbnail"></li>
-							<li><img src="img/prob2.png" alt="" class="img-responsive img-thumbnail"></li>
-							<li><img src="img/prob3.png" alt="" class="img-responsive img-thumbnail"></li>
-							<li><img src="img/prob4.png" alt="" class="img-responsive img-thumbnail"></li>
-						</ul></div>
+					<div class="col-md-8 img-main">
+						<div class="item">            
+	            			<div class="clearfix">
+	               			 <ul id="vertical">
+			                    <li data-thumb="img/prob1.png"> 
+			                        <img src="img/prob1.png">
+			                    </li>
+			                    <li data-thumb="img/prob2.png"> 
+			                        <img src="img/prob2.png" />
+			                    </li>
+			                    <li data-thumb="img/prob3.png"> 
+			                        <img src="img/prob3.png" />
+			                    </li>
+			                    <li data-thumb="img/prob4.png"> 
+			                        <img src="img/prob4.png" />
+			                    </li>
+		                    
+		               		</ul>
+				            </div>
+				        </div>
 					</div>
 
 					<div class="col-md-4">
@@ -150,7 +179,7 @@
 		</footer>
 
 	<script src="js/jquery.waypoints.js"></script>
-	<script src="js/init.js"></script>
+	<!-- <script src="js/init.js"></script> -->
 	</body>
 </html>
 
