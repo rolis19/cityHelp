@@ -1,3 +1,18 @@
+<?php
+include_once '../connection.php';
+session_start();
+if((!isset($_SESSION['login'])) || $_SESSION['login'] == FALSE) {
+	header('location:../index.php');
+} else {
+	if($_SESSION['type'] == "admin") {
+		header('location:../admin/');
+	}
+}
+$username = $_SESSION['username'];
+$sql = mysql_query("SELECT * FROM member WHERE username='$username'");
+$profile = mysql_fetch_object($sql);
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -42,7 +57,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 profile-area1">
-					<img src="../img/realuser.png" alt="">
+					<img src="profile/<?php echo $profile->picture ?>" alt="">
 						<ul class="nav nav-pills nav-stacked">
 							<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
 							<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
@@ -53,8 +68,12 @@
 					<div class="col-md-8 profile-area2">
 						<div class="tab-content">
 					        <div class="tab-pane active" id="about">
-					            <h2>Bimantoro Yudi Prasetya</h2>
-					            <p class="aboutme">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit, eu ornare magna. Nam convallis mattis urna, id mollis dolor blandit blandit. Duis in nisl sapien. Proin at scelerisque nunc, ut pharetra nibh. </p>
+					        	
+					        	<?php
+					            echo "<h2>$profile->name</h2>";
+					            echo "<p class='aboutme'>$profile->description</p>";
+					            ?>
+					            
 					            <div class="col-sm-12">
 					            	<h4>Kontribusi</h4>
 					            </div>
@@ -81,30 +100,29 @@
 					           	</div>
 					        </div>
 					        <div class="tab-pane editprof" id="editprof">					            
-					            <form class="form-horizontal">
+					            <form class="form-horizontal" method="POST" action="changePass.php">
 								 	<div class="form-group">
 									    <label for="inputcurpass" class="col-sm-4 control-label">Pasword sekarang</label>
 									    <div class="col-sm-8">
-									     	<input type="password" class="form-control" id="inputcurpass">
+									     	<input type="password" class="form-control" id="inputcurpass" required>
 										</div>
 								  	</div>
 								  	<div class="form-group">
 									    <label for="inputnewpass" class="col-sm-4 control-label">Pasword baru</label>
 									    <div class="col-sm-8">
-									    	<input type="password" class="form-control" id="inputnewpass">
+									    	<input type="password" onkeyup="validate()" required class="form-control" id="inputnewpass" name="newpass">
 										</div>
 								  	</div>
 								  	<div class="form-group">
 									    <label for="inputrepass" class="col-sm-4 control-label">Retype pasword</label>
 									    <div class="col-sm-8">
-									    	<input type="password" class="form-control" id="inputrepass">
+									    	<input type="password" onkeyup="validate()" class="form-control" id="inputrepass">
 										</div>
 								  	</div>
 								  	<div class="form-group">
 									    <div class="col-sm-offset-4 col-sm-8">
-									    	<hr>
-									      <button type="" class="btn btn-success btn-lg">Update</button>
-									      <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+									      <button type="submit" class="btn btn-success btn-lg">Update</button>
+									      <button type="button" class="btn btn-default btn-lg">Cancel</button>
 									    </div>
 									</div>
 							  	</form>
@@ -261,6 +279,23 @@
 	<script src="../js/jquery.waypoints.js"></script>
 	<script src="../js/parallax.js"></script>
 	<script src="../js/init.js"></script>
+	<script src="../js/ajax.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#inputcurpass').keyup(checkPass);
+	})
+
+		function validate() {
+			var pass = document.getElementById("inputnewpass");
+			var confirm = document.getElementById("inputrepass");
+
+			if(pass.value != confirm.value) {
+				confirm.setCustomValidity("Password don't match");
+			} else {
+				confirm.setCustomValidity("");
+			}
+		}
+	</script>
 	</body>
 </html>
 
