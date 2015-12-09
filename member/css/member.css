@@ -97,3 +97,7 @@ label {
 	border-radius: 5px;
 	padding: 15px;
 }
+.prog-bar table tr td:first-child {
+	font-weight: bold;
+	padding-right: 20px;
+}

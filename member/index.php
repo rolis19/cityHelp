@@ -78,7 +78,7 @@ $profile = mysql_fetch_object($sql);
 					            <div class="col-sm-12">
 					            	<h4>Kontribusi</h4>
 					            </div>
-					           	<div class="col-sm-5">
+					           	<div class="col-sm-6">
 						            <ul>
 						            	<li>Total 270 Postingan</li>
 						            	<li>20 Solution</li>
@@ -86,7 +86,7 @@ $profile = mysql_fetch_object($sql);
 						            	<li>3 Report</li>
 						            </ul>
 					           	</div>
-					           	<div class="col-sm-3">
+					           	<div class="col-sm-6">
 					           		<ul>
 						            	<li>Total</li>
 						            	<li>20 Solution</li>
@@ -94,10 +94,43 @@ $profile = mysql_fetch_object($sql);
 						            	<li>3 Report</li>
 						            </ul>
 					           	</div>
-					           	<div class="col-sm-3">
-					           		<div class="grafik pull-right">
-					           			
-					           		</div>
+					           	
+					           	<div class="col-sm-12 prog-bar">
+					           	<hr>
+					           		<h4>Kontribusi Bar</h4>
+					           		<div class="progress">
+									    <div class="progress-bar progress-bar-success" role="progressbar" style="width:30%">
+									      Goverment
+									    </div>
+									    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+									      Infrastructure
+									    </div>
+									    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
+									      Economy
+									    </div>
+									    <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%">
+									      Tourism
+									    </div>
+									</div>
+									<table>
+									   <tr>
+										<td> Govement : </td>
+										<td> 30% </td>
+									  </tr>
+									  <tr>
+									  	<td> Infrastructure : </td>
+									  	<td> 20% </td>
+									  </tr>
+									  <tr>
+									  	<td> Economy : </td>
+										<td> 30% </td>
+									  </tr>
+									  <tr>
+									  	<td> Tourism : </td>
+									  	<td> 20% </td>
+									  </tr>
+
+									</table>
 					           	</div>
 					        </div>
 					        <div class="tab-pane editprof" id="editprof">
@@ -117,7 +150,6 @@ $profile = mysql_fetch_object($sql);
 								  	<div class="form-group">
 									    <div class="col-sm-offset-4 col-sm-8">
 									      <button type="submit" class="btn btn-success btn-lg">Update</button>
-									      <button type="button" class="btn btn-default btn-lg">Cancel</button>
 									    </div>
 									</div>
 							  	</form>	
@@ -148,7 +180,6 @@ $profile = mysql_fetch_object($sql);
 									  	<div class="form-group">
 										    <div class="col-sm-offset-4 col-sm-8">
 										      <button type="submit" class="btn btn-success btn-lg">Update</button>
-										      <button type="button" class="btn btn-default btn-lg">Cancel</button>
 										    </div>
 										</div>
 									</div>
