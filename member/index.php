@@ -134,17 +134,17 @@ $profile = mysql_fetch_object($sql);
 					           	</div>
 					        </div>
 					        <div class="tab-pane editprof" id="editprof">
-					        	<form class="form-horizontal">
+					        	<form class="form-horizontal" action="edit-profile.php" method="POST" enctype="multipart/form-data">
 					            	<div class="form-group">
 										<label for="inputaboutme" class="col-sm-4 control-label">About me</label>
 										<div class="col-sm-8">
-										  	<textarea class="form-control" rows="5" id="inputaboutme" name="aboutme">Tuliskan singkat mengenai anda</textarea>
+										  	<textarea class="form-control" rows="5" id="inputaboutme" name="aboutme" placeholder="Tuliskan singkat mengenai anda"></textarea>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputuserimg" class="col-sm-4 control-label">Gambar</label>
 										<div class="col-sm-8">
-										  	<input type="file" id="inputuserimg" name="iamge-user">
+										  	<input type="file" id="inputuserimg" name="profilePic">
 										</div>
 		  							</div>
 								  	<div class="form-group">
