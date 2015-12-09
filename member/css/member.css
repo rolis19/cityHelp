@@ -81,12 +81,12 @@ label {
 }
 .postodd {
 	margin: 0;
-	padding: 20px;
+	padding: 20px 20px 50px 20px;
 }
 .posteven {
 	background: #F2F3F7;
 	margin: 0;
-	padding: 20px;
+	padding: 20px 20px 50px 20px;
 }
 .posttop {
 	margin-top: 20px;

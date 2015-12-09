@@ -191,18 +191,30 @@ $profile = mysql_fetch_object($sql);
 					            	<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
+					                <div class="pull-right">
+					                	<a href="#" class="btn btn-info">Edit</a>
+					                	<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-trash"> </span> Delete</a>
+					                </div>
 					            </div>
 					            <div class="posteven">
 					            	<h4><a href="../post-detail.html">Trip ke Goa Kreo</a></h4>
 					            	<small>24 mei 2015 || Review || Tourism >> places</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
+					            	<div class="pull-right">
+					                	<a href="#" class="btn btn-info">Edit</a>
+					                	<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-trash"> </span> Delete</a>
+					                </div>
 					            </div>
 					            <div class="postodd">
 					            	<h4><a href="../post-detail.html">Jalan Baru banyumanik</a></h4>
 					            	<small>12 mei 2015 || Update || Infrastruktur >> Jalan Raya</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
+					            	<div class="pull-right">
+					                	<a href="#modal-editpost" role="button" data-toggle="modal" class="btn btn-info">Edit</a>
+					                	<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-trash"> </span> Delete</a>
+					                </div>
 					            </div>	
 					        </div>
 					        <div class="tab-pane solution" id="solution">
@@ -244,7 +256,7 @@ $profile = mysql_fetch_object($sql);
 											</div>
 									  	</div>
 									  	<div class="form-group">
-										    <label for="inputcharge" class="col-sm-2 control-label">In Charge</label>
+										    <label for="inputcharge" class="col-sm-2 control-label">Charge <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Yang bertanggung jawab, Kosongkan jika tidak ada"></span></label>
 										    <div class="col-sm-10">
 										      <input type="text" class="form-control" id="inputcharge" name="inCharge">
 										    </div>
@@ -327,6 +339,79 @@ $profile = mysql_fetch_object($sql);
 				<p> Copyright @ SmartCity 2016-2017 </p>
 			</div>
 		</footer>
+		<!--Modal Edit post -->
+		<div id="modal-editpost" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close modal2" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+								    <form class="form-horizontal" action="posts.php" method="POST">
+									 	<div class="form-group">
+										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
+										    <div class="col-sm-10">
+										      <select class="form-control inputctg" id="inputcategory" name="postCategory">
+											  	<option value="Government">Government</option>
+											  	<option value="Infrastructure">Infrastructure</option>
+											  	<option value="Economy">Economy</option>
+											  	<option value="Tourism">Tourism</option>
+											  </select>
+											</div>
+									  	</div>
+									  	<div class="form-group">
+										    <label for="inputtype" class="col-sm-2 control-label">Type</label>
+										    <div class="col-sm-10">
+										      <select class="form-control inputtype" id="inputtype" name="postType">
+											  	<option value="Complain">Komplain</option>
+											  	<option value="Review">Review</option>
+											  	<option value="Update">Update</option>
+											  </select>
+											</div>
+									  	</div>
+									  	<div class="form-group">
+										    <label for="inputcharge" class="col-sm-2 control-label">Charge <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Yang bertanggung jawab, Kosongkan jika tidak ada"></span></label>
+										    <div class="col-sm-10">
+										      <input type="text" class="form-control" id="inputcharge" name="inCharge">
+										    </div>
+									  	</div>
+									  	<hr>
+		  								<div class="form-group">
+										    <label for="inputjudul" class="col-sm-2 control-label">Title</label>
+										    <div class="col-sm-10">
+										      <input type="text" class="form-control" id="inputjudul" name="postTitle">
+										    </div>
+									  	</div>
+									  	<div class="form-group">
+										    <label for="inputdeskrip" class="col-sm-2 control-label">Description</label>
+										    <div class="col-sm-10">
+										    	<textarea class="form-control" rows="5" id="inputdeskrip" name="content"></textarea>
+										    </div>
+									  	</div>
+										<div class="form-group">
+										    <label for="inputtag" class="col-sm-2 control-label">Tag</label>
+										    <div class="col-sm-10">
+										      <input type="text" class="form-control inputtag" id="inputtag" name="postTag">
+										    </div>
+									  	</div>
+									  	<div class="form-group">
+										    <label for="inputgambar" class="col-sm-2 control-label">Picture</label>
+										    <div class="col-sm-10">
+										    	<input type="file" id="inputgambar" name="picture">
+										    </div>
+		  								</div>
+									  <div class="form-group">
+									    <div class="col-sm-offset-2 col-sm-10">
+									    	<hr>
+									      <button type="" class="btn btn-success btn-lg">Pertinjau</button>
+									      <button type="submit" class="btn btn-default btn-lg">Terbitkan</button>
+									    </div>
+									  </div>
+									</form>	                    
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>	
 	<script src="../js/jquery.waypoints.js"></script>
@@ -348,6 +433,10 @@ $profile = mysql_fetch_object($sql);
 				confirm.setCustomValidity("");
 			}
 		}
+
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		});
 	</script>
 	</body>
 </html>
