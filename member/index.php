@@ -61,8 +61,8 @@ $profile = mysql_fetch_object($sql);
 						<ul class="nav nav-pills nav-stacked">
 							<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
 							<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
-							<li><a href="#posted" data-toggle="pill"> Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
-							<li><a href="#post" data-toggle="pill">Post</a></li>
+							<li><a href="#posted" data-toggle="pill">Post List</a></li>
+							<li><a href="#post" data-toggle="pill">Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
 							<li><a href="#solution" data-toggle="pill">Solution</a></li>
 						</ul>
 					</div>
@@ -155,9 +155,41 @@ $profile = mysql_fetch_object($sql);
 							  	</form>
 					        </div>
 					        <div class="tab-pane" id="posted">
-							    
-								<div class="collapse" id="collapsepost">
-								  <div class="well">
+					            <div class="postodd posttop">
+					            	<h4><a href="../post-detail.html">Stasiun Tawang rapi dan bersih</a></h4>
+					            	<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					            </div>
+					            <div class="posteven">
+					            	<h4><a href="../post-detail.html">Trip ke Goa Kreo</a></h4>
+					            	<small>24 mei 2015 || Review || Tourism >> places</small>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					            </div>
+					            <div class="postodd">
+					            	<h4><a href="../post-detail.html">Jalan Baru banyumanik</a></h4>
+					            	<small>12 mei 2015 || Update || Infrastruktur >> Jalan Raya</small>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					            </div>	
+					        </div>
+					        <div class="tab-pane solution" id="solution">
+					             <div class="postodd posttop">
+					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					                <small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
+					            </div>
+					            <div class="posteven">
+					            	<h4><a href="#">Trip ke Goa Kreo</a></h4>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					                <small>24 mei 2015 || Review || Tourism >> places</small>
+					            </div>
+					        </div>
+					        <div class="tab-pane solution" id="post">
+					            <div class="well">
 								    <form class="form-horizontal">
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
@@ -220,55 +252,6 @@ $profile = mysql_fetch_object($sql);
 									  </div>
 									</form>
 								  </div>
-								</div>
-
-
-					            <div class="postodd posttop">
-					            	<h4><a href="../post-detail.html">Stasiun Tawang rapi dan bersih</a></h4>
-					            	<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					            </div>
-					            <div class="posteven">
-					            	<h4><a href="../post-detail.html">Trip ke Goa Kreo</a></h4>
-					            	<small>24 mei 2015 || Review || Tourism >> places</small>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					            </div>
-					            <div class="postodd">
-					            	<h4><a href="../post-detail.html">Jalan Baru banyumanik</a></h4>
-					            	<small>12 mei 2015 || Update || Infrastruktur >> Jalan Raya</small>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					            </div>	
-					        </div>
-					        <div class="tab-pane solution" id="solution">
-					             <div class="postodd posttop">
-					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					                <small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
-					            </div>
-					            <div class="posteven">
-					            	<h4><a href="#">Trip ke Goa Kreo</a></h4>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					                <small>24 mei 2015 || Review || Tourism >> places</small>
-					            </div>
-					        </div>
-					        <div class="tab-pane solution" id="post">
-					             <div class="postodd posttop">
-					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					                <small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
-					            </div>
-					            <div class="posteven">
-					            	<h4><a href="#">Trip ke Goa Kreo</a></h4>
-					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-					                ac turpis egestas.</p>
-					                <small>24 mei 2015 || Review || Tourism >> places</small>
-					            </div>
 					        </div>
 					        </div>
 						</div>
