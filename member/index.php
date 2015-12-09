@@ -137,7 +137,7 @@ $profile = mysql_fetch_object($sql);
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
 										    <div class="col-sm-10">
-										      <select class="form-control inputctg" id="inputcategory" name="category">
+										      <select class="form-control inputctg" id="inputcategory" name="postCategory">
 											  	<option value="Government">Government</option>
 											  	<option value="Infrastructure">Infrastructure</option>
 											  	<option value="Economy">Economy</option>
@@ -165,7 +165,7 @@ $profile = mysql_fetch_object($sql);
 		  								<div class="form-group">
 										    <label for="inputjudul" class="col-sm-2 control-label">Title</label>
 										    <div class="col-sm-10">
-										      <input type="text" class="form-control" id="inputjudul" name="title">
+										      <input type="text" class="form-control" id="inputjudul" name="postTitle">
 										    </div>
 									  	</div>
 									  	<div class="form-group">
