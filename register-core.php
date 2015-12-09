@@ -5,10 +5,10 @@
 	$name = mysql_real_escape_string($_POST['full_name']);
 	$username = mysql_real_escape_string($_POST['username']);
 	$email = mysql_real_escape_string($_POST['email']);
-	$password = mysql_real_escape_string($_POST['password']);
+	$password = mysql_real_escape_string($_POST['pass']);
 	$secretkey = "smartcity";
-	$key = md5($password+$secretkey);
-	$query = mysql_query("INSERT INTO member VALUES(NULL, '$name', '$username', '$key', '$email') ");
+	$key = md5($password.$secretkey);
+	$query = mysql_query("INSERT INTO member(name, username, password, email) VALUES('$name', '$username', '$key', '$email') ");
 
 	if($query) {
 		$_SESSION['login'] = true;

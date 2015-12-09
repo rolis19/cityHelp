@@ -21,18 +21,12 @@
 	background: white;
 	border-radius: 50%;
 }
-.main-img ul{
-	float: right;
-}
-.main-img ul li {
-	list-style: none;
-	width: 86px;
-	margin-top: 16px;
-	text-indent: -20px;
+.lslide {
+	padding-right: -40px;
 }
 
-.main-img .img-thumbnail {
-	margin: 0;
+.img-main {
+	padding-right: 50px;
 }
 
 .main-post{
@@ -42,7 +36,34 @@
 .post-detail {
 	margin-top: 24px;
 }
+.brief-button {
+	margin-bottom: 20px;
+}
 .brief-button div {
 	margin-top: 12px;
 	font-weight: bold;
+}
+.col-md-4 tr td:first-child {
+	font-weight: bold;
+}
+.col-md-4 tr td:nth-child(2) {
+	padding-left: 30px;
+}
+.col-md-4 h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.solusi-body{
+	padding: 20px;
+	background: #F6F7F8;
+	border: 1.6px dashed #DDD;
+}
+.date-post {
+	color: #000;
+	font-size: 14px;
+}
+
+.pool a {
+	text-decoration: underline;
+	color: #574D3A;
 }
