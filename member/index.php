@@ -61,6 +61,7 @@ $profile = mysql_fetch_object($sql);
 						<ul class="nav nav-pills nav-stacked">
 							<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
 							<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
+							<li><a href="#posted" data-toggle="pill"> Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
 							<li><a href="#post" data-toggle="pill">Post</a></li>
 							<li><a href="#solution" data-toggle="pill">Solution</a></li>
 						</ul>
@@ -99,38 +100,62 @@ $profile = mysql_fetch_object($sql);
 					           		</div>
 					           	</div>
 					        </div>
-					        <div class="tab-pane editprof" id="editprof">					            
-					            <form class="form-horizontal" method="POST" action="changePass.php">
-								 	<div class="form-group">
-									    <label for="inputcurpass" class="col-sm-4 control-label">Pasword sekarang</label>
-									    <div class="col-sm-8">
-									     	<input type="password" class="form-control" id="inputcurpass" required>
+					        <div class="tab-pane editprof" id="editprof">
+					        	<form class="form-horizontal">
+					            	<div class="form-group">
+										<label for="inputaboutme" class="col-sm-4 control-label">About me</label>
+										<div class="col-sm-8">
+										  	<textarea class="form-control" rows="5" id="inputaboutme" name="aboutme">Tuliskan singkat mengenai anda</textarea>
 										</div>
-								  	</div>
-								  	<div class="form-group">
-									    <label for="inputnewpass" class="col-sm-4 control-label">Pasword baru</label>
-									    <div class="col-sm-8">
-									    	<input type="password" onkeyup="validate()" required class="form-control" id="inputnewpass" name="newpass">
+									</div>
+									<div class="form-group">
+										<label for="inputuserimg" class="col-sm-4 control-label">Gambar</label>
+										<div class="col-sm-8">
+										  	<input type="file" id="inputuserimg" name="iamge-user">
 										</div>
-								  	</div>
-								  	<div class="form-group">
-									    <label for="inputrepass" class="col-sm-4 control-label">Retype pasword</label>
-									    <div class="col-sm-8">
-									    	<input type="password" onkeyup="validate()" class="form-control" id="inputrepass">
-										</div>
-								  	</div>
+		  							</div>
 								  	<div class="form-group">
 									    <div class="col-sm-offset-4 col-sm-8">
 									      <button type="submit" class="btn btn-success btn-lg">Update</button>
 									      <button type="button" class="btn btn-default btn-lg">Cancel</button>
 									    </div>
 									</div>
+							  	</form>	
+							  	<hr>				            
+					            <form class="form-horizontal" method="POST" action="changePass.php">
+		  							<p style="margin-bottom: 20px">
+		  								<a type="button" data-toggle="collapse" data-target="#collapsepass" aria-expanded="false" aria-controls="collapsepost">Ganti Password</a>
+		  							</p>
+		  							<div class="collapse" id="collapsepass">
+										<div class="form-group">
+										    <label for="inputcurpass" class="col-sm-4 control-label">Pasword sekarang</label>
+										    <div class="col-sm-8">
+										     	<input type="password" class="form-control" id="inputcurpass" required>
+											</div>
+										</div>
+										<div class="form-group">
+										    <label for="inputnewpass" class="col-sm-4 control-label">Pasword baru</label>
+										    <div class="col-sm-8">
+										    	<input type="password" onkeyup="validate()" required class="form-control" id="inputnewpass" name="newpass">
+											</div>
+										</div>
+										<div class="form-group">
+										    <label for="inputrepass" class="col-sm-4 control-label">Retype pasword</label>
+										    <div class="col-sm-8">
+										    	<input type="password" onkeyup="validate()" class="form-control" id="inputrepass">
+											</div>
+										</div>
+									  	<div class="form-group">
+										    <div class="col-sm-offset-4 col-sm-8">
+										      <button type="submit" class="btn btn-success btn-lg">Update</button>
+										      <button type="button" class="btn btn-default btn-lg">Cancel</button>
+										    </div>
+										</div>
+									</div>
 							  	</form>
 					        </div>
-					        <div class="tab-pane" id="post">
-							    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapsepost" aria-expanded="false" aria-controls="collapsepost">
-								  Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-								</button>
+					        <div class="tab-pane" id="posted">
+							    
 								<div class="collapse" id="collapsepost">
 								  <div class="well">
 								    <form class="form-horizontal">
@@ -199,25 +224,39 @@ $profile = mysql_fetch_object($sql);
 
 
 					            <div class="postodd posttop">
-					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
+					            	<h4><a href="../post-detail.html">Stasiun Tawang rapi dan bersih</a></h4>
 					            	<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
 					            </div>
 					            <div class="posteven">
-					            	<h4><a href="#">Trip ke Goa Kreo</a></h4>
+					            	<h4><a href="../post-detail.html">Trip ke Goa Kreo</a></h4>
 					            	<small>24 mei 2015 || Review || Tourism >> places</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
 					            </div>
 					            <div class="postodd">
-					            	<h4><a href="#">Jalan Baru banyumanik</a></h4>
+					            	<h4><a href="../post-detail.html">Jalan Baru banyumanik</a></h4>
 					            	<small>12 mei 2015 || Update || Infrastruktur >> Jalan Raya</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 					                ac turpis egestas.</p>
 					            </div>	
-					        	</div>
+					        </div>
 					        <div class="tab-pane solution" id="solution">
+					             <div class="postodd posttop">
+					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					                <small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
+					            </div>
+					            <div class="posteven">
+					            	<h4><a href="#">Trip ke Goa Kreo</a></h4>
+					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+					                ac turpis egestas.</p>
+					                <small>24 mei 2015 || Review || Tourism >> places</small>
+					            </div>
+					        </div>
+					        <div class="tab-pane solution" id="post">
 					             <div class="postodd posttop">
 					            	<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
