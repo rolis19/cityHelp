@@ -16,7 +16,7 @@ $profile = mysql_fetch_object($sql);
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Smart City - Bimantoro Yudi</title>
+		<title>Smart City - <?php echo $profile->name ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 		<!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
@@ -137,53 +137,53 @@ $profile = mysql_fetch_object($sql);
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
 										    <div class="col-sm-10">
-										      <select class="form-control inputctg" id="inputcategory">
-											  	<option>Pemerintahan</option>
-											  	<option>Infrastruktur</option>
-											  	<option>Ekonomi</option>
-											  	<option>Tourism</option>
+										      <select class="form-control inputctg" id="inputcategory" name="category">
+											  	<option value="Government">Government</option>
+											  	<option value="Infrastructure">Infrastructure</option>
+											  	<option value="Economy">Economy</option>
+											  	<option value="Tourism">Tourism</option>
 											  </select>
 											</div>
 									  	</div>
 									  	<div class="form-group">
 										    <label for="inputtype" class="col-sm-2 control-label">Type</label>
 										    <div class="col-sm-10">
-										      <select class="form-control inputtype" id="inputtype">
-											  	<option>Komplain</option>
-											  	<option>Review</option>
-											  	<option>Update</option>
+										      <select class="form-control inputtype" id="inputtype" name="postType">
+											  	<option value="Complain">Komplain</option>
+											  	<option value="Review">Review</option>
+											  	<option value="Update">Update</option>
 											  </select>
 											</div>
 									  	</div>
 									  	<div class="form-group">
 										    <label for="inputcharge" class="col-sm-2 control-label">In Charge</label>
 										    <div class="col-sm-10">
-										      <input type="text" class="form-control" id="inputcharge">
+										      <input type="text" class="form-control" id="inputcharge" name="inCharge">
 										    </div>
 									  	</div>
 									  	<hr>
 		  								<div class="form-group">
-										    <label for="inputjudul" class="col-sm-2 control-label">Judul</label>
+										    <label for="inputjudul" class="col-sm-2 control-label">Title</label>
 										    <div class="col-sm-10">
-										      <input type="text" class="form-control" id="inputjudul">
+										      <input type="text" class="form-control" id="inputjudul" name="title">
 										    </div>
 									  	</div>
 									  	<div class="form-group">
-										    <label for="inputdeskrip" class="col-sm-2 control-label">Judul</label>
+										    <label for="inputdeskrip" class="col-sm-2 control-label">Description</label>
 										    <div class="col-sm-10">
-										    	<textarea class="form-control" rows="5" id="inputdeskrip"></textarea>
+										    	<textarea class="form-control" rows="5" id="inputdeskrip" name="content"></textarea>
 										    </div>
 									  	</div>
 										<div class="form-group">
 										    <label for="inputtag" class="col-sm-2 control-label">Tag</label>
 										    <div class="col-sm-10">
-										      <input type="text" class="form-control inputtag" id="inputtag">
+										      <input type="text" class="form-control inputtag" id="inputtag" name="postTag">
 										    </div>
 									  	</div>
 									  	<div class="form-group">
-										    <label for="inputgambar" class="col-sm-2 control-label">Gambar</label>
+										    <label for="inputgambar" class="col-sm-2 control-label">Picture</label>
 										    <div class="col-sm-10">
-										    	<input type="file" id="inputgambar">
+										    	<input type="file" id="inputgambar" name="picture">
 										    </div>
 		  								</div>
 									  <div class="form-group">
