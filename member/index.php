@@ -221,7 +221,7 @@ $profile = mysql_fetch_object($sql);
 					        </div>
 					        <div class="tab-pane solution" id="post">
 					            <div class="well">
-								    <form class="form-horizontal">
+								    <form class="form-horizontal" action="posts.php" method="POST">
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
 										    <div class="col-sm-10">
