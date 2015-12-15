@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2015 at 04:59 PM
+-- Generation Time: Dec 15, 2015 at 07:22 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -53,6 +53,7 @@ INSERT INTO `member` (`user_id`, `name`, `username`, `password`, `email`, `pictu
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `post_id` varchar(11) NOT NULL,
+  `date` varchar(15) NOT NULL,
   `post_author` varchar(50) NOT NULL,
   `post_title` varchar(255) NOT NULL,
   `post_content` varchar(1000) NOT NULL,

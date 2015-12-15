@@ -1,7 +1,9 @@
 <?php
 include_once '../connection.php';
 session_start();
+date_default_timezone_set("Asia/Jakarta");
 $user = $_SESSION['username'];
+$date = date("d-m-Y");
 $category = mysql_real_escape_string($_POST['postCategory']);
 $type = mysql_real_escape_string($_POST['postType']);
 $charge = mysql_real_escape_string($_POST['inCharge']);
@@ -44,7 +46,7 @@ foreach($file as $array) {
 }
 //PICTURE END HERE
 $picture = json_encode($img, JSON_UNESCAPED_UNICODE);
-$sql = mysql_query("INSERT INTO post VALUES('$post_id' ,'$user', '$title', '$content', '$category', '$type', '$tag', '$charge', '$picture')");
+$sql = mysql_query("INSERT INTO post VALUES('$post_id', '$date', '$user', '$title', '$content', '$category', '$type', '$tag', '$charge', '$picture')");
 
 if($sql) {
 	header('location:index.php?status=success');

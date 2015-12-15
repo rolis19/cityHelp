@@ -186,7 +186,57 @@ $profile = mysql_fetch_object($sql);
 							  	</form>
 					        </div>
 					        <div class="tab-pane" id="posted">
-					            <div class="postodd posttop">
+					        	<?php
+					        		$idx = 1;
+					        		$query =  mysql_query("SELECT * FROM post WHERE post_author='$username'");
+					        		$num = mysql_num_rows(mysql_query("SELECT * FROM post WHERE post_author='$username'"));
+
+					        		if($num) {
+					        			$first = true;
+					        			while($row = mysql_fetch_object($query)) {
+					        				$mod = $idx%2;
+					        				if($first) {
+					        					echo "<div class='postodd posttop'>";
+						        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+						        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
+						        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+						        				echo "<div class='pull-right'">;
+						        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+						        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+						        				echo "</div>";
+						        				echo "</div>";
+						        				$first = false;
+					        				} else {
+					        					if($mod) {
+					        						echo "<div class='postodd'>";
+							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
+							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+							        				echo "<div class='pull-right'">;
+							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+							        				echo "</div>";
+							        				echo "</div>";
+							        				$idx++;
+					        					} else {
+					        						echo "<div class='posteven'>";
+							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
+							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+							        				echo "<div class='pull-right'">;
+							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+							        				echo "</div>";
+							        				echo "</div>";
+							        				$idx++;
+					        					}
+					        				}
+					        			}
+					        		} else {
+					        			echo "<p>You haven't posted anything</p>";
+					        		}
+					        	?>
+					            <!-- <div class="postodd posttop">
 					            	<h4><a href="../post-detail.html">Stasiun Tawang rapi dan bersih</a></h4>
 					            	<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
 					            	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
@@ -215,7 +265,7 @@ $profile = mysql_fetch_object($sql);
 					                	<a href="#modal-editpost" role="button" data-toggle="modal" class="btn btn-info">Edit</a>
 					                	<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-trash"> </span> Delete</a>
 					                </div>
-					            </div>	
+					            </div> -->	
 					        </div>
 					        <div class="tab-pane solution" id="solution">
 					             <div class="postodd posttop">
