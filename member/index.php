@@ -233,7 +233,7 @@ $profile = mysql_fetch_object($sql);
 					        </div>
 					        <div class="tab-pane solution" id="post">
 					            <div class="well">
-								    <form class="form-horizontal" action="posts.php" method="POST">
+								    <form class="form-horizontal" action="posts.php" method="POST" enctype="multipart/form-data">
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
 										    <div class="col-sm-10">
@@ -249,7 +249,7 @@ $profile = mysql_fetch_object($sql);
 										    <label for="inputtype" class="col-sm-2 control-label">Type</label>
 										    <div class="col-sm-10">
 										      <select class="form-control inputtype" id="inputtype" name="postType">
-											  	<option value="Complain">Komplain</option>
+											  	<option value="Complain">Complain</option>
 											  	<option value="Review">Review</option>
 											  	<option value="Update">Update</option>
 											  </select>
@@ -283,7 +283,7 @@ $profile = mysql_fetch_object($sql);
 									  	<div class="form-group">
 										    <label for="inputgambar" class="col-sm-2 control-label">Picture</label>
 										    <div class="col-sm-10">
-										    	<input type="file" id="inputgambar" name="picture">
+										    	<input type="file" id="inputgambar" name="picture[]" multiple>
 										    </div>
 		  								</div>
 									  <div class="form-group">
