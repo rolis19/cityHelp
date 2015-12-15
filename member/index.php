@@ -200,7 +200,7 @@ $profile = mysql_fetch_object($sql);
 						        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 						        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 						        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
-						        				echo "<div class='pull-right'">;
+						        				echo "<div class='pull-right'>";
 						        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 						        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 						        				echo "</div>";
@@ -212,7 +212,7 @@ $profile = mysql_fetch_object($sql);
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
-							        				echo "<div class='pull-right'">;
+							        				echo "<div class='pull-right'>";
 							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
@@ -223,7 +223,7 @@ $profile = mysql_fetch_object($sql);
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
-							        				echo "<div class='pull-right'">;
+							        				echo "<div class='pull-right'>";
 							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
@@ -288,7 +288,7 @@ $profile = mysql_fetch_object($sql);
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
 										    <div class="col-sm-10">
 										      <select class="form-control inputctg" id="inputcategory" name="postCategory">
-											  	<option value="Government">Government</option>
+											  	<option value="Social">Social</option>
 											  	<option value="Infrastructure">Infrastructure</option>
 											  	<option value="Economy">Economy</option>
 											  	<option value="Tourism">Tourism</option>
@@ -299,7 +299,7 @@ $profile = mysql_fetch_object($sql);
 										    <label for="inputtype" class="col-sm-2 control-label">Type</label>
 										    <div class="col-sm-10">
 										      <select class="form-control inputtype" id="inputtype" name="postType">
-											  	<option value="Complain">Complain</option>
+											  	<option value="Complaint">Complaint</option>
 											  	<option value="Review">Review</option>
 											  	<option value="Update">Update</option>
 											  </select>
