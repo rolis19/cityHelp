@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2015 at 01:17 PM
+-- Generation Time: Dec 15, 2015 at 04:59 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`user_id`, `name`, `username`, `password`, `email`, `picture`, `description`) VALUES
-(1, 'Muhammad Zuhri Hanifullah', 'zuhri2395', 'fd77dcd859284dcb1cdf57aa3f46ce45', 'zuhri2395@gmail.com', 'zuhri2395.png', 'Agan ini masih malu-malu nyeritain tentang dirinya.');
+(1, 'Muhammad Zuhri Hanifullah', 'zuhri2395', 'fd77dcd859284dcb1cdf57aa3f46ce45', 'zuhri2395@gmail.com', 'zuhri2395', '');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ INSERT INTO `member` (`user_id`, `name`, `username`, `password`, `email`, `pictu
 
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
-  `post_id` int(11) NOT NULL,
+  `post_id` varchar(11) NOT NULL,
   `post_author` varchar(50) NOT NULL,
   `post_title` varchar(255) NOT NULL,
   `post_content` varchar(1000) NOT NULL,
@@ -88,11 +88,6 @@ ALTER TABLE `post`
 --
 ALTER TABLE `member`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `post`
---
-ALTER TABLE `post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
