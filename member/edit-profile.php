@@ -36,6 +36,6 @@ if(empty($_FILES['profilePic']['name'])) {
 			header('location:index.php?status=failed');
 		}
 
-		mysql_query("UPDATE member SET description='$aboutme', picture='$user'");
+		mysql_query("UPDATE member SET description='$aboutme', picture='$user' WHERE username='$user'");
 	}
 }
