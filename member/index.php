@@ -339,7 +339,6 @@ $profile = mysql_fetch_object($sql);
 									  <div class="form-group">
 									    <div class="col-sm-offset-2 col-sm-10">
 									    	<hr>
-									      <button type="" class="btn btn-success btn-lg">Pertinjau</button>
 									      <button type="submit" class="btn btn-default btn-lg">Terbitkan</button>
 									    </div>
 									  </div>
