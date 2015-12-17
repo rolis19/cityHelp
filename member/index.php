@@ -35,7 +35,6 @@ $jumlah = $social+$economy+$infra+$tourism;
 	<title>Smart City - <?php echo $profile->name ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/member.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
@@ -59,7 +58,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="../loged.html">Government</a></li>
+					<li><a href="../loged.html">Social</a></li>
 					<li><a href="../loged.html">Infrastructure</a></li>
 					<li><a href="../loged.html">Economy</a></li>
 					<li><a href="../loged.html">Tourism</a></li>
@@ -96,7 +95,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 						</div>
 						<div class="col-sm-6">
 							<ul>
-								<li>Total 270 Postingan</li>
+								<li>Total <?php echo $jumlah; ?> Postingan</li>
 								<li>20 Solution</li>
 								<li>30 komentar</li>
 								<li>3 Report</li>
@@ -215,10 +214,17 @@ $jumlah = $social+$economy+$infra+$tourism;
 									echo "<div class='postodd posttop'>";
 									echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 									echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-									echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+									echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 									echo "<div class='pull-right'>";
-									echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
-									echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+									// echo "<a href='edit-post.php?edit=" . md5($row->post_id) . "'class='btn btn-info'>Edit</a>";
+									echo "<form action='edit-post.php' method='POST'>";
+									echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+									echo "<button type='submit' class='btn btn-info'>Edit</button>";
+									echo "</form>";
+									echo "<form action='delete-post.php' method='POST'>";
+									echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+									echo "<button type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</button>";
+									echo "</form>";
 									echo "</div>";
 									echo "</div>";
 									$first = false;
@@ -228,10 +234,16 @@ $jumlah = $social+$economy+$infra+$tourism;
 										echo "<div class='postodd'>";
 										echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 										echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-										echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+										echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 										echo "<div class='pull-right'>";
-										echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
-										echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+										echo "<form action='edit-post.php' method='POST'>";
+										echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+										echo "<button type='submit' class='btn btn-info'>Edit</button>";
+										echo "</form>";
+										echo "<form action='delete-post.php' method='POST'>";
+										echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+										echo "<button type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</button>";
+										echo "</form>";
 										echo "</div>";
 										echo "</div>";
 										$idx++;
@@ -239,10 +251,16 @@ $jumlah = $social+$economy+$infra+$tourism;
 										echo "<div class='posteven'>";
 										echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 										echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-										echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+										echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 										echo "<div class='pull-right'>";
-										echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
-										echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
+										echo "<form action='edit-post.php' method='POST'>";
+										echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+										echo "<button type='submit' class='btn btn-info'>Edit</button>";
+										echo "</form>";
+										echo "<form action='delete-post.php' method='POST'>";
+										echo "<input type='hidden' name='post-id' value='$row->post_id' />";
+										echo "<button type='submit' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</button>";
+										echo "</form>";
 										echo "</div>";
 										echo "</div>";
 										$idx++;
