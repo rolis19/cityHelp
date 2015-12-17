@@ -46,8 +46,8 @@
 						<a href="#" class="btn btn-success btn-lg">INFRASTRUCTURE DATA</a>
 					</div>
 						<div class="user">
-							<a href="">SIGN UP</a>
-							<a href="">LOGIN</a>
+							<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
+							<a href="#modal-login" role="button" data-toggle="modal">LOGIN</a>
 							<img src="img/user.png" alt="" width="50px">
 						</div>
 				</div>
@@ -55,17 +55,31 @@
 		</section>
 		<div class="border-green"> </div>
 
-		<nav class="navbar">
+		<nav class="navbar navbar-default" role = "navigation">
 			<div class="container-fluid">
-			<div class="logo"><img src="img/logo.png" width="200px" style="float: left"></div>
-				<ul class="nav navbar-nav navbar-right">
-					<li role="presentation" class=""><a href="#">Government</a></li>
-					<li role="presentation"><a href="#">Infrastructur</a></li>
-					<li role="presentation"><a href="#">Economy</a></li>
-					<li role="presentation"><a href="#">Tourism</a></li>		
-				</ul>
+				<div class="row fix-menu">
+					<div class="navbar-header">
+		  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+		  					<span class="sr-only">Toggle navigation</span>
+		  					<span class="icon-bar"></span>
+		  					<span class="icon-bar"></span>
+		  					<span class="icon-bar"></span>
+		  				</button>
+					<!-- Your Logo --> 
+		  			<div class="logo"><a href="index.html"><img src="img/logo.png" width="200px"></a></div>
+					</div>
+					<!-- Start Navigation -->
+		  			<div class="collapse navbar-collapse" id="collapse" role="navigation">
+			  			<ul class="nav navbar-nav navbar-right">
+			  				<li><a href="social.html">Social</a></li>
+							<li class="active"><a href="infrastructure.html">Infrastructure</a></li>
+							<li><a href="economy.html">Economy</a></li>
+							<li><a href="tourism.html">Tourism</a></li>	
+			  			</ul>
+					</div>
+				</div>		
 			</div>
-		</nav>
+	  	</nav>
 			<div class="container main-post	">
 				<div class="row">
 					<div class="col-md-8 img-main">
@@ -153,7 +167,76 @@
 					</div>
 				</div>
 			</div>
-		
+		<!-- All Modal Placed in here -->
+		<div id="modal-sign" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close modal1" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form role="form" id="validation" autocomplete="off">
+							<div class="form-group">
+								<input type="email" id="valid-email" class="form-control" placeholder="VALID EMAIL">
+							</div>
+							<button type="submit" id="submit-email" class="btn btn-success btn-lg">SIGN UP</button>
+						</form>
+						<hr width="60%">
+						<p>USE SIGN UP ALTERNATIVE</p>
+						<div class="sosmed">
+							<img src="img/fb.png" alt="">
+						</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div id="modal-login" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="login-core.php" role="form" method="POST">
+							<div class="form-group">
+								<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME" name="username">
+								<input type="password" id="form-elem-1" class="form-control" placeholder="PASSWORD" name="password">
+							</div>
+							<button type="submit" class="btn btn-success btn-lg">SIGN IN</button>
+						</form>
+						<hr width="60%">
+						<p>USE LOGIN ALTERNATIVE</p>
+						<div class="sosmed">
+							<img src="img/fb.png" alt="">
+						</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+		<div id="modal-signup" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+		                <button type="button" class="close modal2" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            </div>
+	                <div class="modal-body text-center">
+	                    <form action="register-core.php" role="form" method="POST">
+							<div class="form-group">
+								<input type="text" name="full_name" id="name" class="form-control" placeholder="Full Name">
+								<input type="text" name="username" id="username" class="form-control" placeholder="Username">
+								<input type="email" name="email" id="email" class="form-control" placeholder="Email" readonly>
+								<input type="password" name="pass" id="pass" onkeyup="validate()" class="form-control" placeholder="Password">
+								<input type="password" name="confirm_pass" id="confirm_pass" onkeyup="validate()" class="form-control" placeholder="Confirm Password">
+							</div>
+							<button type="submit" class="btn btn-success btn-lg">SIGN UP</button>
+						</form>
+						<hr width="60%">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 		<footer>
 			<div class="abfooter">
 				<div class="container">
@@ -208,7 +291,8 @@
 		    	        <div class="modal-body text-center">
 		                	 <div class="form-group">
 							  <label for="comment">Solusi:</label>
-							  <textarea class="form-control" rows="5" id="comment"></textarea>
+							  <textarea class="form-control" rows="5" id="comment" style="width: 100%">Tuliskan solusimu</textarea>
+							  <p>Berikan solusi yang relevant, dengan topic gunakan bahasa yang baik. lihat peraturan selengkapnya</p>
 							  <hr>
 							  <a href="#" class="btn btn-success btn-lg">Submit</a>
 							</div>   
