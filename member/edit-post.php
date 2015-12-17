@@ -8,9 +8,33 @@ if((!isset($_SESSION['login'])) || $_SESSION['login'] == FALSE) {
 		header('location:../admin/');
 	}
 }
+
+function diverse_array($vector) {
+    $result = array();
+    foreach($vector as $key1 => $value1)
+        foreach($value1 as $key2 => $value2)
+            $result[$key2] = $value2;
+    return $result;
+}
+
 $username = $_SESSION['username'];
 $sql = mysql_query("SELECT * FROM member WHERE username='$username'");
 $profile = mysql_fetch_object($sql);
+$query = mysql_query("SELECT post_category FROM post WHERE post_author='$username'");
+$array = array();
+while($row = mysql_fetch_object($query)) {
+	$category = $row->post_category;
+	$sql = mysql_query("SELECT COUNT(post_category) AS category FROM post WHERE post_author='$username' AND post_category='$category'");
+	$num = mysql_fetch_object($sql)->category;
+	array_push($array, array($category => $num));
+}
+$array = diverse_array($array);
+$infra = $array['Infrastructure'];
+$social = $array['Social'];
+$eco = $array['Economy'];
+$tour = $array['Tourism'];
+$jml = $infra+$social+$eco+$tour;
+
 ?>
 
 <!DOCTYPE html>
@@ -99,35 +123,35 @@ $profile = mysql_fetch_object($sql);
 					           	<hr>
 					           		<h4>Kontribusi Bar</h4>
 					           		<div class="progress">
-									    <div class="progress-bar progress-bar-success" role="progressbar" style="width:30%">
-									      Goverment
+									    <div class="progress-bar progress-bar-success" role="progressbar" style="width:<?php echo $social/$jml*100; ?>%">
+									      Social
 									    </div>
-									    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+									    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:<?php echo $infra/$jml*100; ?>%">
 									      Infrastructure
 									    </div>
-									    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
+									    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:<?php echo $eco/$jml*100; ?>%">
 									      Economy
 									    </div>
-									    <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%">
+									    <div class="progress-bar progress-bar-info" role="progressbar" style="width:<?php echo $tour/$jml*100; ?>%">
 									      Tourism
 									    </div>
 									</div>
 									<table>
 									   <tr>
-										<td> Govement : </td>
-										<td> 30% </td>
+										<td> Social : </td>
+										<td> <?php echo $social/$jml*100; ?>% </td>
 									  </tr>
 									  <tr>
 									  	<td> Infrastructure : </td>
-									  	<td> 20% </td>
+									  	<td> <?php echo $infra/$jml*100; ?>% </td>
 									  </tr>
 									  <tr>
 									  	<td> Economy : </td>
-										<td> 30% </td>
+										<td> <?php echo $eco/$jml*100; ?>% </td>
 									  </tr>
 									  <tr>
 									  	<td> Tourism : </td>
-									  	<td> 20% </td>
+									  	<td> <?php echo $tour/$jml*100; ?>% </td>
 									  </tr>
 
 									</table>
@@ -199,21 +223,22 @@ $profile = mysql_fetch_object($sql);
 					        					echo "<div class='postodd posttop'>";
 						        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 						        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-						        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+						        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
 						        				echo "<div class='pull-right'>";
-						        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+						        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
 						        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 						        				echo "</div>";
 						        				echo "</div>";
 						        				$first = false;
+						        				$idx++;
 					        				} else {
 					        					if($mod) {
 					        						echo "<div class='postodd'>";
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+							        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
 							        				echo "<div class='pull-right'>";
-							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
 							        				echo "</div>";
@@ -222,9 +247,9 @@ $profile = mysql_fetch_object($sql);
 					        						echo "<div class='posteven'>";
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
+							        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
 							        				echo "<div class='pull-right'>";
-							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
 							        				echo "</div>";
@@ -236,7 +261,6 @@ $profile = mysql_fetch_object($sql);
 					        			echo "<p>You haven't posted anything</p>";
 					        		}
 					        	?>
-
 					        </div>
 					        <div class="tab-pane solution" id="solution">
 					             <div class="postodd posttop">
@@ -252,8 +276,9 @@ $profile = mysql_fetch_object($sql);
 					                <small>24 mei 2015 || Review || Tourism >> places</small>
 					            </div>
 					        </div>
-					        <div class="tab-pane solution active post-form" id="post">
+							<div class="tab-pane solution active post-form" id="post">
 					            <div class="well">
+					            <h2 style="margin-bottom: 40px">Edit Post</h2>
 								    <form class="form-horizontal" action="posts.php" method="POST" enctype="multipart/form-data">
 									 	<div class="form-group">
 										    <label for="inputcategory" class="col-sm-2 control-label">Category</label>
