@@ -79,7 +79,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 					<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
 					<li><a href="#posted" data-toggle="pill">Post List</a></li>
 					<li><a href="#post" data-toggle="pill">Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
-					<li><a href="#solution" data-toggle="pill">Solution</a></li>
+					<li><a href="#solution" data-toggle="pill">Solution & comments</a></li>
 				</ul>
 			</div>
 			<div class="col-md-8 profile-area2">
@@ -257,15 +257,17 @@ $jumlah = $social+$economy+$infra+$tourism;
 					<div class="tab-pane solution" id="solution">
 						<div class="postodd posttop">
 							<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
+							<h5>comment</h5>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 								ac turpis egestas.</p>
-							<small>20 mei 2015 || Update || Infrastrktur >> stasiun kota</small>
+							<small>20 mei 2015 || Update >> Infrastrktur</small>
 						</div>
 						<div class="posteven">
 							<h4><a href="#">Trip ke Goa Kreo</a></h4>
+							<h5>Solution</h5>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 								ac turpis egestas.</p>
-							<small>24 mei 2015 || Review || Tourism >> places</small>
+							<small>24 mei 2015 || Review >> Tourism</small>
 						</div>
 					</div>
 					<div class="tab-pane solution post-form" id="post">
