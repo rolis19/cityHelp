@@ -84,10 +84,18 @@
 		</nav>
 		<div class="part1">
 			<div class="container quotes">
-				<p class="words" > "Kita memiliki banyak masalah itu bukan karena semata orang jahat banyak, tapi juga karena orang-orang baik yang ada hanya diam dan mendiamkan kejahatan yang terjadi."</p>
-				<p class="pull-right"> Anies Baswedan - Menteri Pendidikan dan Kebudayaan </p> 
+			<?php
+				$sql = mysql_query("SELECT COUNT(*) num FROM quotes");
+				$length = mysql_fetch_object($sql)->num;
+				$id = rand(1, $length);
+				$query = mysql_query("SELECT * FROM quotes WHERE id='$id");
+				$quotes = mysql_fetch_object($query);
+				$idiom = $quotes->idioms;
+				$author = $quotes->author;
+				echo $idiom;
+				echo $author;
+			?>
 			</div>
-
 		</div>
 		<div class="part3">
 			<div class="container">
