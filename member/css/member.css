@@ -101,3 +101,9 @@ label {
 	font-weight: bold;
 	padding-right: 20px;
 }
+.editprof #inputaboutme{width: 460px}
+.post-form #inputcategory{width: 180px}
+.post-form #inputcharge{width: 280px}
+.post-form #inputjudul{width: 530px}
+.post-form #inputdeskrip{width: 550px}
+.post-form #inputtag{width: 310px}

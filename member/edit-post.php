@@ -8,33 +8,9 @@ if((!isset($_SESSION['login'])) || $_SESSION['login'] == FALSE) {
 		header('location:../admin/');
 	}
 }
-
-function diverse_array($vector) {
-    $result = array();
-    foreach($vector as $key1 => $value1)
-        foreach($value1 as $key2 => $value2)
-            $result[$key2] = $value2;
-    return $result;
-}
-
 $username = $_SESSION['username'];
 $sql = mysql_query("SELECT * FROM member WHERE username='$username'");
 $profile = mysql_fetch_object($sql);
-$query = mysql_query("SELECT post_category FROM post WHERE post_author='$username'");
-$array = array();
-while($row = mysql_fetch_object($query)) {
-	$category = $row->post_category;
-	$sql = mysql_query("SELECT COUNT(post_category) AS category FROM post WHERE post_author='$username' AND post_category='$category'");
-	$num = mysql_fetch_object($sql)->category;
-	array_push($array, array($category => $num));
-}
-$array = diverse_array($array);
-$infra = $array['Infrastructure'];
-$social = $array['Social'];
-$eco = $array['Economy'];
-$tour = $array['Tourism'];
-$jml = $infra+$social+$eco+$tour;
-
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +59,7 @@ $jml = $infra+$social+$eco+$tour;
 					<div class="col-md-4 profile-area1">
 					<img src="profile/<?php echo $profile->picture ?>" alt="">
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
+							<li><a href="#about" data-toggle="pill">About me</a></li>
 							<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
 							<li><a href="#posted" data-toggle="pill">Post List</a></li>
 							<li><a href="#post" data-toggle="pill">Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
@@ -92,7 +68,7 @@ $jml = $infra+$social+$eco+$tour;
 					</div>
 					<div class="col-md-8 profile-area2">
 						<div class="tab-content">
-					        <div class="tab-pane active" id="about">
+					        <div class="tab-pane" id="about">
 					        	
 					        	<?php
 					            echo "<h2>$profile->name</h2>";
@@ -123,35 +99,35 @@ $jml = $infra+$social+$eco+$tour;
 					           	<hr>
 					           		<h4>Kontribusi Bar</h4>
 					           		<div class="progress">
-									    <div class="progress-bar progress-bar-success" role="progressbar" style="width:<?php echo $social/$jml*100; ?>%">
-									      Social
+									    <div class="progress-bar progress-bar-success" role="progressbar" style="width:30%">
+									      Goverment
 									    </div>
-									    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:<?php echo $infra/$jml*100; ?>%">
+									    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
 									      Infrastructure
 									    </div>
-									    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:<?php echo $eco/$jml*100; ?>%">
+									    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
 									      Economy
 									    </div>
-									    <div class="progress-bar progress-bar-info" role="progressbar" style="width:<?php echo $tour/$jml*100; ?>%">
+									    <div class="progress-bar progress-bar-info" role="progressbar" style="width:20%">
 									      Tourism
 									    </div>
 									</div>
 									<table>
 									   <tr>
-										<td> Social : </td>
-										<td> <?php echo $social/$jml*100; ?>% </td>
+										<td> Govement : </td>
+										<td> 30% </td>
 									  </tr>
 									  <tr>
 									  	<td> Infrastructure : </td>
-									  	<td> <?php echo $infra/$jml*100; ?>% </td>
+									  	<td> 20% </td>
 									  </tr>
 									  <tr>
 									  	<td> Economy : </td>
-										<td> <?php echo $eco/$jml*100; ?>% </td>
+										<td> 30% </td>
 									  </tr>
 									  <tr>
 									  	<td> Tourism : </td>
-									  	<td> <?php echo $tour/$jml*100; ?>% </td>
+									  	<td> 20% </td>
 									  </tr>
 
 									</table>
@@ -223,22 +199,21 @@ $jml = $infra+$social+$eco+$tour;
 					        					echo "<div class='postodd posttop'>";
 						        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 						        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-						        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+						        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
 						        				echo "<div class='pull-right'>";
-						        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
+						        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 						        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 						        				echo "</div>";
 						        				echo "</div>";
 						        				$first = false;
-						        				$idx++;
 					        				} else {
 					        					if($mod) {
 					        						echo "<div class='postodd'>";
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-							        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
 							        				echo "<div class='pull-right'>";
-							        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
 							        				echo "</div>";
@@ -247,9 +222,9 @@ $jml = $infra+$social+$eco+$tour;
 					        						echo "<div class='posteven'>";
 							        				echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
 							        				echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
-							        				echo "<p>" . substr($row->post_content, 0, 160) . "</p>";
+							        				echo "<p>" . substr($row->post_content, 0, 50) . "</p>";
 							        				echo "<div class='pull-right'>";
-							        				echo "<a href='edit-post.php' class='btn btn-info'>Edit</a>";
+							        				echo "<a href='#' class='btn btn-info'>Edit</a>";
 							        				echo "<a href='#' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span>Delete</a>";
 							        				echo "</div>";
 							        				echo "</div>";
@@ -261,6 +236,7 @@ $jml = $infra+$social+$eco+$tour;
 					        			echo "<p>You haven't posted anything</p>";
 					        		}
 					        	?>
+
 					        </div>
 					        <div class="tab-pane solution" id="solution">
 					             <div class="postodd posttop">
@@ -276,7 +252,7 @@ $jml = $infra+$social+$eco+$tour;
 					                <small>24 mei 2015 || Review || Tourism >> places</small>
 					            </div>
 					        </div>
-					        <div class="tab-pane solution post-form" id="post">
+					        <div class="tab-pane solution active post-form" id="post">
 					            <div class="well">
 								    <form class="form-horizontal" action="posts.php" method="POST" enctype="multipart/form-data">
 									 	<div class="form-group">
@@ -325,16 +301,10 @@ $jml = $infra+$social+$eco+$tour;
 										      <input type="text" class="form-control inputtag" id="inputtag" name="postTag">
 										    </div>
 									  	</div>
-									  	<div class="form-group">
-										    <label for="inputgambar" class="col-sm-2 control-label">Picture</label>
-										    <div class="col-sm-10">
-										    	<input type="file" id="inputgambar" name="picture[]" multiple>
-										    </div>
-		  								</div>
 									  <div class="form-group">
 									    <div class="col-sm-offset-2 col-sm-10">
 									    	<hr>
-									      <button type="submit" class="btn btn-default btn-lg">Terbitkan</button>
+									      <button type="submit" class="btn btn-default btn-lg">Update</button>
 									    </div>
 									  </div>
 									</form>
