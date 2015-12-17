@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 17, 2015 at 12:20 AM
--- Server version: 5.5.46-0ubuntu0.14.04.2
--- PHP Version: 5.5.9-1ubuntu4.14
+-- Host: 127.0.0.1
+-- Generation Time: Dec 17, 2015 at 05:12 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `smartcity`
@@ -26,16 +26,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `member`
 --
 
-CREATE TABLE IF NOT EXISTS `member` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `member` (
+  `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `picture` varchar(255) DEFAULT 'user.png',
-  `description` varchar(100) NOT NULL DEFAULT 'Agan ini masih malu-malu nyeritain tentang dirinya.',
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `description` varchar(100) NOT NULL DEFAULT 'Agan ini masih malu-malu nyeritain tentang dirinya.'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `member`
@@ -53,7 +52,7 @@ INSERT INTO `member` (`user_id`, `name`, `username`, `password`, `email`, `pictu
 -- Table structure for table `post`
 --
 
-CREATE TABLE IF NOT EXISTS `post` (
+CREATE TABLE `post` (
   `post_id` varchar(11) NOT NULL,
   `date` varchar(15) NOT NULL,
   `post_author` varchar(50) NOT NULL,
@@ -63,8 +62,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `post_type` varchar(8) NOT NULL,
   `post_tag` varchar(50) NOT NULL,
   `post_inCharge` varchar(50) NOT NULL,
-  `pictures` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`post_id`)
+  `pictures` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -84,6 +82,61 @@ INSERT INTO `post` (`post_id`, `date`, `post_author`, `post_title`, `post_conten
 ('TR-2', '16-12-2015', 'bimantoro', 'Lawang Sewu, Icon Seamarang', '"Salah satu iconnya Semarang yg paling terkenal, pastilah Lawang Sewu. Bangunan ini konon katanya angker, dan beberapa kali pernah masuk tv untuk dibahas keseremannya. Waktu ke Semarang kemarin, tujuan utama gue pastinya adalah ke Lawang Sewu. Karena pikiran, pasti keren buat foto-foto di sana. Arsitekturnya kan jadul, and gue emang seneng yang berbau vintage vintage gitu.\r\n\r\nTiket masuk untuk dewasa adalah 10 ribu rupiah. Plus bayar guide 30 ribu (wajib), 20 ribu untuk fee guide, dan 10 ribu lagi untuk tiket masuk guide. Jadi total buat ke Lawang Sewu keluar duit 40 ribu. Awalnya gue mikir, lumayan mahal nih, berhubung gue sendiri."\r\n', 'Tourism', 'Review', '#lawangsewusemarang', 'disbudpar', '[]'),
 ('TR-3', '16-12-2015', 'sukyzuh', 'Vihara Budhagaya Watugong', '"diresmikan pada 2006 lalu dan dinyatakan MURI sebagai pagoda tertinggi di Indonesia. Vihara Buddhagaya Watugong terletak 45 menit dari pusat Kota Semarang. Vihara ini memiliki banyak bangunan dan berada di area yang luas.\n\nSalah satu ikon yang paling terkenal di vihara ini adalah Pagoda Avalokitesvara (Metta Karuna), dimana didalamnya terdapat Buddha Rupang yang besar. Pagoda Avalokitesvara yang memiliki tinggi bangunan setinggi 45 meter dengan 7 tingkat, yang bermakna bahwa seorang pertapa akan mencapai kesucian dalam tingkat ketujuh.\n\nBagian dalam pagoda berbentuk segi delapan dengan ukuran 15 x 15 meter. Mulai tingkat kedua hingga keenam dipasang patung Dewi Kwan Im (Dewi Welas Asih) yang menghadap empat penjuru angin. Hal ini bertujuan agar sang dewi memancarkan kasih sayangnya ke segala arah mata angin."\n', 'Tourism', 'Review', '#ViharaBudhagayaWatugong', 'disbudpar', '[]');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quotes`
+--
+
+CREATE TABLE `quotes` (
+  `id` int(11) NOT NULL,
+  `idioms` varchar(500) NOT NULL,
+  `author` varchar(160) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `quotes`
+--
+
+INSERT INTO `quotes` (`id`, `idioms`, `author`) VALUES
+(1, '"Kita memiliki banyak masalah itu bukan karena semata orang jahat banyak, tapi juga karena orang-orang baik yang ada hanya diam dan mendiamkan kejahatan yang terjadi."', 'Anies Baswedan - Menteri Pendidikan dan Kebudayaan ');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- Indexes for table `quotes`
+--
+ALTER TABLE `quotes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `quotes`
+--
+ALTER TABLE `quotes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
