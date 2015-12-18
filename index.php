@@ -85,15 +85,16 @@
 		<div class="part1">
 			<div class="container quotes">
 			<?php
+				include_once 'connection.php';
 				$sql = mysql_query("SELECT COUNT(*) num FROM quotes");
 				$length = mysql_fetch_object($sql)->num;
 				$id = rand(1, $length);
-				$query = mysql_query("SELECT * FROM quotes WHERE id='$id");
+				$query = mysql_query("SELECT * FROM quotes WHERE id='$id'");
 				$quotes = mysql_fetch_object($query);
 				$idiom = $quotes->idioms;
 				$author = $quotes->author;
-				echo $idiom;
-				echo $author;
+				echo "<p class='words'>" .$idiom. "</p>";
+				echo "<p class='pull-right'>" .$author. "</p>";
 			?>
 			</div>
 		</div>
