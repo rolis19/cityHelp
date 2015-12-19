@@ -102,7 +102,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<img src="img/Broken-Road.jpg" alt="" class="img-responsive">
+						<img src="img/Broken-Road.jpg" alt="" class="img-responsive img-thumbnail">
 					</div>
 					<div class="col-md-6">
 						<div class="ctpi">
@@ -127,11 +127,36 @@
 							<a href="post-detail.html" class="btn btn-success btn-lg">READ MORE</a>
 					</div>
 				</div>
+			</div>
+			<div class="container">
 				<div class="row feature-child">
-					<div class="col-md-3"><img src="img/prob1.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob2.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob3.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob4.png" alt="" class="img-responsive img-thumbnail"></div>
+					<div class="col-md-4">
+						<h4>Judul 2</h4>
+						<small>category : Social</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
+					<div class="col-md-4">
+						<h4>Judul 3</h4>
+						<small>category : Infrastruktur</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
+					<div class="col-md-4">
+						<h4>Judul 4</h4>
+						<small>category : Economy</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
 				</div>	
 			</div>
 		</div>

@@ -1,4 +1,4 @@
 RewriteEngine On    # Turn on the rewriting engine
 RewriteRule    ^post/([A-Za-z0-9-]+)/?$ post-detail.php?post_id=$1 [NC,L]
-RewriteRule    ^post/((css|js|img)/.*) /$1
+RewriteRule    ^post/((css|js|img)/.*) $1
 RewriteRule    ^post/member/((gallery|profile)/.*) member/$1
