@@ -1,7 +1,15 @@
+<?php
+include_once 'connection.php';
+
+$id = $_GET['post_id'];
+$sql = mysql_query("SELECT * FROM post WHERE post_id='$id'");
+$post = mysql_fetch_object($sql);
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Post Detail - Smart City</title>
+		<title><?php echo $post->post_title; ?> - Smart City</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -24,7 +32,16 @@
 	          thumbMargin:4,
 	          slideMargin:0,
 	          adaptiveHeight: true
-	        });  
+	        });
+
+	        $('.collapse li').each(function() {
+	        	var category = <?php echo "\"" . $post->post_category . "\";"; ?>
+	        	var text = $(this).text();
+	        	if(text == category) {
+	        		$(this).addClass("active");
+	        	}
+	        });
+
 	      });
     	</script>
 	</head>
@@ -72,7 +89,7 @@
 		  			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 			  			<ul class="nav navbar-nav navbar-right">
 			  				<li><a href="social.html">Social</a></li>
-							<li class="active"><a href="infrastructure.html">Infrastructure</a></li>
+							<li><a href="infrastructure.html">Infrastructure</a></li>
 							<li><a href="economy.html">Economy</a></li>
 							<li><a href="tourism.html">Tourism</a></li>	
 			  			</ul>
@@ -105,31 +122,30 @@
 					</div>
 
 					<div class="col-md-4">
-						<h3>Lombok Idjo</h3>
-						<div class="date-post">12 Agustus 2016</div>
+						<h3><?php echo $post->post_title; ?></h3>
+						<div class="date-post"><?php echo $post->date; ?></div>
 						<hr>
-						<small>Kelud utara 4 no. 3 A// Review</small>
 						<table>
 						   <tr>
 							<td> Category : </td>
-							<td> Pariwisata </td>
+							<td> <?php echo $post->post_category; ?> </td>
 						  </tr>
 						  <tr>
 						  	<td> Type : </td>
-						  	<td> Complain </td>
+						  	<td> <?php echo $post->post_type; ?> </td>
 						  </tr>
 						  <tr>
 						  	<td> Posted by : </td>
-							<td> Bima Yudi Prasetya </td>
+							<td> <?php echo $post->post_author; ?> </td>
 						  </tr>
 						  <tr>
 						  	<td> In Charge : </td>
-						  	<td> Goverment </td>
+						  	<td> <?php echo $post->post_inCharge; ?> </td>
 						  </tr>
 
 						</table>
 						<div class="brief-button">
-							<div class="bold">Hastag : #semarangindah</div>
+							<div class="bold">Hastag : <?php echo $post->post_tag;?></div>
 								<div class="respponder">250 Responder</div>
 								<div class="best-solusion">3 Solusi</div>
 								<div class="sosmed">
@@ -139,17 +155,15 @@
 								<img src="img/gog.png" alt="">
 							</div>
 						</div>
-						<a href="#modal-solusi" role="button" data-toggle="modal" class="btn btn-success btn-lg">Beri Solusi</a>
+						<a href="#modal-solusi" role="button" data-toggle="modal" class="btn btn-success btn-lg">Give <?php echo ($post->post_type == "Complaint" ? "Solution" : "Comment"); ?></a>
 					</div>
 					<div class="col-md-12 post-detail">
 						<div class="prob">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit, eu ornare magna. Nam convallis mattis urna, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit, eu ornare magna. Nam convallis mattis urna, </p>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit, eu ornare magna. Nam convallis mattis urna, Lorem ipsum., </p>
+							<p><?php echo $post->post_content; ?></p>
 						</div>
 					</div>
 					<div class="col-md-12">
-					<h2>Solution</h2>
+					<h2><?php echo ($post->post_type == "Complaint" ? "Solution" : "Comment"); ?></h2>
 						<div class="solusi-body">
 							<p>
 								<div class="date">12 februari 2015</div>

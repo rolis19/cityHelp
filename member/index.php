@@ -212,7 +212,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 								$mod = $idx%2;
 								if($first) {
 									echo "<div class='postodd posttop'>";
-									echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+									echo "<h4><a href='../post/$row->post_id'>" . $row->post_title . "</a></h4>";
 									echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 									echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 									echo "<div class='pull-right'>";
@@ -232,7 +232,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 								} else {
 									if($mod) {
 										echo "<div class='postodd'>";
-										echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+										echo "<h4><a href='../post/$row->post_id'>" . $row->post_title . "</a></h4>";
 										echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 										echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 										echo "<div class='pull-right'>";
@@ -249,7 +249,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 										$idx++;
 									} else {
 										echo "<div class='posteven'>";
-										echo "<h4><a href='../post-detail.html'>" . $row->post_title . "</a></h4>";
+										echo "<h4><a href='../post/$row->post_id'>" . $row->post_title . "</a></h4>";
 										echo "<small>" . $row->date . " || " . $row->post_type . " || " . $row->post_category . "</small>";
 										echo "<p>" . substr($row->post_content, 0, 160) . "...</p>";
 										echo "<div class='pull-right'>";

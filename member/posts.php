@@ -3,7 +3,7 @@ include_once '../connection.php';
 session_start();
 date_default_timezone_set("Asia/Jakarta");
 $user = $_SESSION['username'];
-$date = date("d-m-Y");
+$date = date("d F Y");
 $category = mysql_real_escape_string($_POST['postCategory']);
 $type = mysql_real_escape_string($_POST['postType']);
 $charge = mysql_real_escape_string($_POST['inCharge']);
