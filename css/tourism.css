@@ -65,13 +65,29 @@
 	line-height: 2;
 	text-indent: -40px;
 }
-.sidebar ul li a{	
+.populer ul li a{	
 	font-weight: 300;
 	text-decoration: underline dashed #444;
 	color: #AAA;
 }
-.sidebar ul li a:hover{
+.populer ul li a:hover{
 	text-decoration: none;
 	text-decoration: underline dashed #D5D6D5;
 	color: #D5D6D5;
 }
+.tags ul li {margin-top: 10px;}
+.tags ul li a {
+	color: #462B49;
+	padding: 2px 8px 4px 8px;
+	border-radius: 10px;
+	font-size: 16px;
+}
+.tags ul li a:hover {
+	text-decoration: none;
+}
+#tag1 {background: #BAF874}
+#tag1:hover {background: #22C576; color: #FFF}
+#tag2 {background: #FFD264}
+#tag2:hover {background: #FF8726; color: #FFF}
+#tag3 {background: #E6FE9B}
+#tag3:hover {background: #FAF66F; color: #FFF}
