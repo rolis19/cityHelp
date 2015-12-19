@@ -142,7 +142,7 @@
 					<div class="col-md-6">
 						<h2> Semarang </h2>
 						<p> "Semarang Setara" merupakan  slogan Kota Semarang  untuk mempermudah seluruh pemangku kepentingan pembangunan mengimplementasikan perwujudan visi dan misi Kota Semarang 2010 - 2015. Makna yang terkandung dalam slogan tersebut bahwa Kota Semarang sudah waktunya memiliki kedudukan yang setara dengan kota metropolitan lainnya.</p>
-						<button type="button" class="btn btn-success"> Read City Profile </button>
+						<a href="profile-semarang.html" type="button" class="btn btn-success"> Read City Profile </a>
 					</div>
  					 <div class="cuaca col-md-6 text-center" style="margin-top: 50px">
 						<iframe id="forecast_embed" type="text/html" frameborder="0" height="225" width="100%" 
