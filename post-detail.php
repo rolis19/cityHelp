@@ -32,7 +32,16 @@ $post = mysql_fetch_object($sql);
 	          thumbMargin:4,
 	          slideMargin:0,
 	          adaptiveHeight: true
-	        });  
+	        });
+
+	        $('.collapse li').each(function() {
+	        	var category = <?php echo "\"" . $post->post_category . "\";"; ?>
+	        	var text = $(this).text();
+	        	if(text == category) {
+	        		$(this).addClass("active");
+	        	}
+	        });
+
 	      });
     	</script>
 	</head>
@@ -80,7 +89,7 @@ $post = mysql_fetch_object($sql);
 		  			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 			  			<ul class="nav navbar-nav navbar-right">
 			  				<li><a href="social.html">Social</a></li>
-							<li class="active"><a href="infrastructure.html">Infrastructure</a></li>
+							<li><a href="infrastructure.html">Infrastructure</a></li>
 							<li><a href="economy.html">Economy</a></li>
 							<li><a href="tourism.html">Tourism</a></li>	
 			  			</ul>
