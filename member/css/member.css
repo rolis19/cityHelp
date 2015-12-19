@@ -63,8 +63,7 @@ label {
 	width: 40%;
 }
 .tab-content .aboutme{
-	margin-right: 20px;
-}
+	margin-right: 20px; }
 .tab-content ul li{
 	list-style: none;
 	text-indent: -36px;
@@ -100,6 +99,12 @@ label {
 .prog-bar table tr td:first-child {
 	font-weight: bold;
 	padding-right: 20px;
+}
+#posted form {
+ 	display: inline-table;
+}
+#posted form .btn{
+ 	margin-right: 10px;
 }
 .editprof #inputaboutme{width: 460px}
 .post-form #inputcategory{width: 180px}
