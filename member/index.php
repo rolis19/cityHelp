@@ -53,7 +53,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 					<span class="icon-bar"></span>
 				</button>
 				<!-- Your Logo -->
-				<div class="logo"><a href="../index.html"><img src="../img/logo.png" width="200px"></a></div>
+				<div class="logo"><a href="../index.php"><img src="../img/logo.png" width="200px"></a></div>
 			</div>
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
