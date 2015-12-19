@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2015 at 11:28 AM
+-- Generation Time: Dec 19, 2015 at 05:02 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -23,6 +23,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
+  `comment_id` int(11) NOT NULL,
+  `comment_date` varchar(20) NOT NULL,
+  `post_id` varchar(10) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `comment_content` varchar(10000) NOT NULL,
+  `comment_likes` int(5) NOT NULL DEFAULT '0',
+  `comment_dislikes` int(5) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `comment_date`, `post_id`, `user`, `comment_content`, `comment_likes`, `comment_dislikes`) VALUES
+(1, '19 December 2015', 'TR-1', 'zuhri2395', '123', 0, 0),
+(2, '19 December 2015', 'TR-1', 'zuhri2395', '1234', 0, 0),
+(3, '19 December 2015', 'IC-1', 'zuhri2395', 'tes', 0, 0),
+(4, '19 December 2015', 'IC-1', 'zuhri2395', 'tes12', 0, 0),
+(5, '19 December 2015', 'IC-1', 'zuhri2395', 'tes123', 0, 0),
+(6, '19 December 2015', 'IC-1', 'zuhri2395', 'tes1234', 0, 0),
+(7, '19 December 2015', 'IC-1', 'zuhri2395', 'tes12345', 0, 0),
+(8, '19 December 2015', 'IC-1', 'zuhri2395', 'abc', 0, 0),
+(9, '19 December 2015', 'IC-1', 'zuhri2395', 'tyur', 0, 0),
+(10, '19 December 2015', 'TR-1', 'zuhri2395', 'coba ya', 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
@@ -30,7 +63,7 @@ DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `username` varchar(30) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `picture` varchar(255) DEFAULT 'user.png',
@@ -96,18 +129,28 @@ CREATE TABLE IF NOT EXISTS `quotes` (
   `id` int(11) NOT NULL,
   `idioms` varchar(500) NOT NULL,
   `author` varchar(160) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `quotes`
 --
 
 INSERT INTO `quotes` (`id`, `idioms`, `author`) VALUES
-(1, '"Kita memiliki banyak masalah itu bukan karena semata orang jahat banyak, tapi juga karena orang-orang baik yang ada hanya diam dan mendiamkan kejahatan yang terjadi."', 'Anies Baswedan - Menteri Pendidikan dan Kebudayaan ');
+(1, '"Kita memiliki banyak masalah itu bukan karena semata orang jahat banyak, tapi juga karena orang-orang baik yang ada hanya diam dan mendiamkan kejahatan yang terjadi."', 'Anies Baswedan - Menteri Pendidikan dan Kebudayaan '),
+(2, 'Do your creativity to change your Society', '@ridwankamil - Mayor of West Java'),
+(3, 'A great city is not to be confounded with a populous one.', 'Aristotle - Greek Philosopher'),
+(4, 'A city is a place where there is no need to wait for next week to get the answer to a question, to taste the food of any country, to find new voices to listen to and familiar ones to listen to again.', 'Margaret Mead - American Anthropologist'),
+(5, 'A great city is that which has the greatest men and women.', 'Walt Whitman - American Poet');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `member`
@@ -132,6 +175,11 @@ ALTER TABLE `quotes`
 --
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
@@ -140,7 +188,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `quotes`
 --
 ALTER TABLE `quotes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
