@@ -33,7 +33,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 				valid = true;
 			} else {
 				valid = false;
-			}
+			};
 
 			if(valid) {
 				$.ajax({
@@ -77,6 +77,40 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 				if(text == category) {
 					$(this).addClass("active");
 				}
+			});
+
+			$(document).on('click', '#like', function() {
+				var id = $(this).parents(".solusi-body").find("#comment-id").val();
+				$.ajax({
+					type: "POST",
+					url: "rating.php",
+					data: "id=" + id + "&type=like",
+					cache: false,
+					success: function(response) {
+						if(response != "0") {
+							$('#likes-'+id).html(response);
+						} else {
+							alert("Gagal like");
+						}
+					}
+				})
+			});
+
+			$(document).on('click', '#dislike', function() {
+				var id = $(this).parents(".solusi-body").find("#comment-id").val();
+				$.ajax({
+					type: "POST",
+					url: "rating.php",
+					data: "id=" + id + "&type=dislike",
+					cache: false,
+					success: function(response) {
+						if(response != "0") {
+							$('#dislikes-'+id).html(response);
+						} else {
+							alert("Gagal dislike");
+						}
+					}
+				})
 			});
 
 		});
@@ -207,26 +241,27 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 			<h2><?php echo ($post->post_type == "Complaint" ? "Solution" : "Comment"); ?></h2>
 			<div class="comment-section">
 				<?php
-					$sql = mysql_query("SELECT * FROM comment WHERE post_id='$id'");
-					while($row = mysql_fetch_object($sql)) {
-						$query = mysql_query("SELECT post_type FROM post WHERE post_id='$id'");
-						$type = mysql_fetch_object($query)->post_type;
-						echo "<div class='solusi-body'>";
-						echo "<div>" . $row->user . "</div>";
-						echo "<p>";
-						echo "<div class='date'>" . $row->comment_date . "</div>";
-						echo $row->comment_content;
-						echo "</p>";
-						echo "<p>";
-						echo "Setuju : " . $row->comment_likes . " orang" . ($type == "Complaint" ? " | Tidak Setuju : " . $row->comment_dislikes . " orang" : "");
-						echo "</p>";
-						echo "<div class='pool pull-right'>";
-						echo "<p>";
-						echo ($_SESSION['login'] ? ($type == "Complaint" ? "<a href='#'>Setuju</a> | <a href='#'>Tidak Setuju</a>" : "<a href='#'>Setuju</a>") : "");
-						echo "</p>";
-						echo "</div>";
-						echo "</div>";
-					}
+				$sql = mysql_query("SELECT * FROM comment WHERE post_id='$id'");
+				while($row = mysql_fetch_object($sql)) {
+					$query = mysql_query("SELECT post_type FROM post WHERE post_id='$id'");
+					$type = mysql_fetch_object($query)->post_type;
+					echo "<div class='solusi-body'>";
+					echo "<input type='hidden' id='comment-id' value='$row->comment_id'/>";
+					echo "<div>" . $row->user . "</div>";
+					echo "<p>";
+					echo "<div class='date'>" . $row->comment_date . "</div>";
+					echo $row->comment_content;
+					echo "</p>";
+					echo "<p>";
+					echo "Setuju : <span id='likes-" . $row->comment_id . "'>" . $row->comment_likes . "</span> orang" . ($type == "Complaint" ? " | Tidak Setuju : <span id='dislikes-" . $row->comment_id . "'>" . $row->comment_dislikes . "</span> orang" : "");
+					echo "</p>";
+					echo "<div class='pool pull-right'>";
+					echo "<p>";
+					echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<a href='#'>Setuju</a>") : "");
+					echo "</p>";
+					echo "</div>";
+					echo "</div>";
+				}
 				?>
 			</div>
 		</div>
@@ -371,5 +406,3 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 <!-- <script src="js/init.js"></script> -->
 </body>
 </html>
-
-
