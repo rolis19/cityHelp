@@ -153,6 +153,30 @@ h1, h2, h3, h4, h5, h6 {
 	}
 /*https://nakupanda.github.io/bootstrap3-dialog/ */
 
+.last-infras {
+	margin-bottom: 120px;
+}
+.logo-category {
+	height: 110px;
+}
+.right-logo {
+	height: 110px;
+	background-color: #F4F4F4;
+}
+.logo-area {
+	padding-top: 10px;
+	height: 110px;
+	background-color: #69B241;
+}
+.navigation {
+	background: #E8E9EC;
+	margin-top: 60px;
+	margin-bottom: 30px;
+	padding: 20px 8px;
+	border-radius: 10px;
+	border: 1px dashed #028AF4;
+	height: auto;
+}
 footer{
 	background-color:#462b22;
 	color: #fff;
