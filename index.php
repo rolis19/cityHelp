@@ -102,7 +102,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<img src="img/Broken-Road.jpg" alt="" class="img-responsive">
+						<img src="img/Broken-Road.jpg" alt="" class="img-responsive img-thumbnail">
 					</div>
 					<div class="col-md-6">
 						<div class="ctpi">
@@ -127,11 +127,36 @@
 							<a href="post-detail.html" class="btn btn-success btn-lg">READ MORE</a>
 					</div>
 				</div>
+			</div>
+			<div class="container">
 				<div class="row feature-child">
-					<div class="col-md-3"><img src="img/prob1.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob2.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob3.png" alt="" class="img-responsive img-thumbnail"></div>
-					<div class="col-md-3"><img src="img/prob4.png" alt="" class="img-responsive img-thumbnail"></div>
+					<div class="col-md-4">
+						<h4>Judul 2</h4>
+						<small>category : Social</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
+					<div class="col-md-4">
+						<h4>Judul 3</h4>
+						<small>category : Infrastruktur</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
+					<div class="col-md-4">
+						<h4>Judul 4</h4>
+						<small>category : Economy</small>
+						<hr>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation</p>
+						<p><a href="" class="btn btn-success">Selengkapnya</a></p>
+					</div>
 				</div>	
 			</div>
 		</div>
@@ -142,7 +167,7 @@
 					<div class="col-md-6">
 						<h2> Semarang </h2>
 						<p> "Semarang Setara" merupakan  slogan Kota Semarang  untuk mempermudah seluruh pemangku kepentingan pembangunan mengimplementasikan perwujudan visi dan misi Kota Semarang 2010 - 2015. Makna yang terkandung dalam slogan tersebut bahwa Kota Semarang sudah waktunya memiliki kedudukan yang setara dengan kota metropolitan lainnya.</p>
-						<button type="button" class="btn btn-success"> Read City Profile </button>
+						<a href="profil-semarang.html" type="button" class="btn btn-success"> Read City Profile </a>
 					</div>
  					 <div class="cuaca col-md-6 text-center" style="margin-top: 50px">
 						<iframe id="forecast_embed" type="text/html" frameborder="0" height="225" width="100%" 
