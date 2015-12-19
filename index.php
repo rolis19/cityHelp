@@ -58,8 +58,9 @@
 					
 					<div class="hero text-center">
 						<h1>Step to Change your city </h1>
-						<p>Langkah awal untuk menuju Semarang yang lebih baik, diawali dari diri kita sendiri, mari ikut berkontribusi untuk menuju Semarang yang lebih baik. </br><b><font size='5'> SEMARANG SETARA </font></b> </p>
-						<a href="#" class="btn btn-success btn-lg">DEMO <i class="glyphicon glyphicon-play"> </i></a>
+						<p>Langkah awal untuk menuju Semarang yang lebih baik, diawali dari diri kita sendiri, mari ikut berkontribusi untuk menuju Semarang yang 
+						lebih baik. Melalui sistem yang telah kami buat</br><strong><font size='5'> SEMARANG SETARA </font></strong> </p>
+						<a href="#" class="btn btn-success btn-lg">How it works</i></a>
 					</div>
 					<div class="user">
 						<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
@@ -94,7 +95,7 @@
 				$idiom = $quotes->idioms;
 				$author = $quotes->author;
 				echo "<p class='words'>" .$idiom. "</p>";
-				echo "<p class='pull-right'>" .$author. "</p>";
+				echo "<p>" .$author. "</p>";
 			?>
 			</div>
 		</div>
