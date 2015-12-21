@@ -14,6 +14,6 @@
 		$_SESSION['username'] = $user;
 		header('location:member/');
 	} else {
-		header('location:index.html');
+		header('location:index.php');
 	}
 ?>

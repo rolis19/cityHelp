@@ -24,7 +24,7 @@ $idx = 1;
 
 foreach($file as $array) {
 	$ext = explode(".", $array['name']);
-	$ext = end($ext);
+	$ext = strtolower(end($ext));
 	$finfo = finfo_open(FILEINFO_MIME_TYPE);
 	$mime = finfo_file($finfo, $array['tmp_name']);
 
