@@ -11,7 +11,16 @@ $title = mysql_real_escape_string($_POST['postTitle']);
 $content = mysql_real_escape_string($_POST['content']);
 $tag = mysql_real_escape_string($_POST['postTag']);
 $subs = substr($category, 0,1) . substr($type, 0,1);
-$num = mysql_num_rows(mysql_query("SELECT * FROM post WHERE (post_id REGEXP '^$subs')"));
+$check = mysql_query("SELECT * FROM post WHERE (post_id REGEXP '^$subs')");
+$num = 0;
+while($row = mysql_fetch_object($check)) {
+	$data = explode("-", $row->post_id);
+	$data = $data['1'];
+	if($num < $data) {
+		$num = $data;
+	}
+}
+
 $post_id = $subs . "-" . ($num+1);
 
 //PICTURE START HERE
