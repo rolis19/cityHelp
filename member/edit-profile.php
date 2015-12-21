@@ -22,9 +22,9 @@ if(empty($_FILES['profilePic']['name'])) {
 	}
 } else {
 	$dir = "profile/";
-	$allowedExt = array("jpg", "png");
+	$allowedExt = array("jpg", "jpeg", "png");
 	$ext = explode(".", $_FILES['profilePic']['name']);
-	$ext = end($ext);
+	$ext = strtolower(end($ext));
 	$finfo = finfo_open(FILEINFO_MIME_TYPE);
 	$mime = finfo_file($finfo, $_FILES['profilePic']['tmp_name']);
 	$pathname = $dir . $user;
