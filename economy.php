@@ -151,9 +151,9 @@ $profile = mysql_fetch_object($sql);
 					echo "<tr>";
 					echo "</table>";
 					echo "</div>";
-					echo "<div class='panel-footer text-center'>";
+					echo "<div class='panel-footer'>";
 					echo "<small class='solution'>$jumlah ". ($row->post_type == "Complaint" ? "Solution" : "Comment") . "</small>";
-					echo "<a href='post/$row->post_id' class='readmore pull-right'>Read More</a>";
+					echo "<a href='post/$row->post_id' class='pull-right readmore'>Read More</a>";
 					echo "</div>";
 					echo "</div>";
 				}

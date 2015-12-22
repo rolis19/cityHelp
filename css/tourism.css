@@ -24,7 +24,9 @@
 .panel-footer {
 	background: #01C26F;
 	color: #FFF;
-	padding: 30px 14px;
+	padding-bottom: 40px;
+	height: auto;
+	padding-top: 20px;
 }
 .panel-footer a {
 	color: #FFF;
@@ -40,7 +42,6 @@
 	font-weight: bold;
 }
 .solution {
-	float: left;
 	font-weight: 300;
 }
 .respond {
