@@ -1,6 +1,10 @@
 <?php
 include_once 'connection.php';
 session_start();
+$user = $_SESSION['username'];
+$sql = mysql_query("SELECT * FROM member WHERE username='$user'");
+$profile = mysql_fetch_object($sql);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,9 +75,31 @@ session_start();
 				</div>
 			</div>
 			<div class="user">
-				<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
-				<a href="#modal-login" role="button" data-toggle="modal">LOGIN</a>
-				<img src="img/user.png" alt="" width="50px">
+				<?php
+					if(isset($_SESSION['login'])) {
+						echo "<a href='member/#solution' class='batas'>Komentar</a>";
+						echo "<a href='member/#solution' class='batas'>Solusi</a>";
+						echo "<a href='member/#posted'>Post</a>";
+						echo "<img src='member/profile/$profile->picture' alt='' width='50px'>";
+
+						echo "<span class='dropdown'>";
+						echo "<a class='dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>";
+						echo "<span class='glyphicon glyphicon-menu-hamburger'></span>";
+						echo "</a>";
+						echo "<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>";
+						echo "<li class='dropdown-header'>$profile->username</li>";
+						echo "<li><a href='member/#editprof'>Edit Profile</a></li>";
+						echo "<li><a href='#'>Resolution</a></li>";
+						echo "<li><a href='logout.php'>Log out</a></li>";
+						echo "<li></li>";
+						echo "</ul>";
+						echo "</span>";
+					} else {
+						echo "<a href='#modal-sign' role='button' data-toggle='modal'>DAFTAR</a>";
+						echo "<a href='#modal-login' role='button' data-toggle='modal'>MASUK</a>";
+						echo "<img src='img/user.png' alt='' width='50px'>";
+					}
+				?>
 			</div>
 		</div>
 	</div>

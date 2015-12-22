@@ -10,26 +10,6 @@ $user = $_POST['username'];
 
 $sql = mysql_query("INSERT INTO comment(comment_date, post_id, user, comment_content) VALUES ('$date', '$postID', '$user', '$content') ");
 
-
-//<div class="solusi-body">
-///					<p>
-//					<div class="date">12 februari 2015</div>
-//					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim nisi, placerat quis ornare eu, scelerisque ac risus. Phasellus dapibus dui a fermentum scelerisque. Pellentesque fringilla pretium elit,
-//					</p>
-//					<p>
-//						Setuju : 20 orang
-//					</p>
-//					<div class="pool pull-right">
-//						<p>
-//							<?php
-//							if($_SESSION['login']) {
-//								echo "<a href='#'>Setuju</a> | <a href='#'>Tidak Setuju</a>";
-//							}
-//							>
-//						</p>
-//					</div>
-//				</div>
-
 if($sql) {
 	$sql = mysql_query("SELECT * FROM comment WHERE post_id='$postID'");
 	while($row = mysql_fetch_object($sql)) {
@@ -47,7 +27,7 @@ if($sql) {
 		echo "</p>";
 		echo "<div class='pool pull-right'>";
 		echo "<p>";
-		echo ($_SESSION['login'] ? ($type == "Complaint" ? "<a href='#' id='like'>Setuju</a> | <a href='#' id='dislike'>Tidak Setuju</a>" : "<a href='#'>Setuju</a>") : "");
+		echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<button type='button' id='like'>Like</button>") : "");
 		echo "</p>";
 		echo "</div>";
 		echo "</div>";
