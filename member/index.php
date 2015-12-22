@@ -26,6 +26,20 @@ $tourism = (@$array['Tourism'] == NULL ? 0 : $array['Tourism']);
 $infra = (@$array['Infrastructure'] == NULL ? 0 : $array['Infrastructure']);
 $jumlah = $social+$economy+$infra+$tourism;
 
+//Solution and Comment count
+$query = mysql_query("SELECT * FROM comment WHERE user='$username'");
+$solution = 0;
+$comment = 0;
+
+while($row = mysql_fetch_object($query)) {
+	$type = mysql_fetch_object(mysql_query("SELECT post_type type FROM post WHERE post_id='$row->post_id'"))->type;
+	if($type == "Complaint") {
+		$solution++;
+	} else {
+		$comment++;
+	}
+}
+
 
 ?>
 
@@ -96,9 +110,8 @@ $jumlah = $social+$economy+$infra+$tourism;
 						<div class="col-sm-6">
 							<ul>
 								<li>Total <?php echo $jumlah; ?> Postingan</li>
-								<li>20 Solution</li>
-								<li>30 komentar</li>
-								<li>3 Report</li>
+								<li><?php echo $solution; ?> Solution</li>
+								<li><?php echo $comment; ?> komentar</li>
 							</ul>
 						</div>
 						<div class="col-sm-6">
@@ -106,7 +119,6 @@ $jumlah = $social+$economy+$infra+$tourism;
 								<li>Total</li>
 								<li>20 Solution</li>
 								<li>30 komentar</li>
-								<li>3 Report</li>
 							</ul>
 						</div>
 
@@ -204,7 +216,7 @@ $jumlah = $social+$economy+$infra+$tourism;
 						<?php
 						$idx = 1;
 						$query =  mysql_query("SELECT * FROM post WHERE post_author='$username'");
-						$num = mysql_num_rows(mysql_query("SELECT * FROM post WHERE post_author='$username'"));
+						$num = mysql_fetch_object(mysql_query("SELECT COUNT(*) num FROM post WHERE post_author='$username'"))->num;
 
 						if($num) {
 							$first = true;
@@ -273,7 +285,48 @@ $jumlah = $social+$economy+$infra+$tourism;
 						?>
 					</div>
 					<div class="tab-pane solution" id="solution">
-						<div class="postodd posttop">
+						<?php
+						$idx = 1;
+						$query = mysql_query("SELECT * FROM comment WHERE user='$username'");
+						$num = mysql_fetch_object(mysql_query("SELECT COUNT(*) num FROM comment WHERE user='$username'"))->num;
+
+						if($num) {
+							$first = true;
+							while($row = mysql_fetch_object($query)) {
+								$sql = mysql_query("SELECT post_title, post_type, post_category FROM post WHERE post_id='$row->post_id'");
+								$post = mysql_fetch_object($sql);
+								$url = "../post/" . $row->post_id;
+								$mod = $idx%2;
+								if($first) {
+									echo "<div class='postodd posttop'>";
+									echo "<h4><a href='" . $url . "'>" . $post->post_title . "</a></h4>";
+									echo "<h5>" . ($post->post_type == "Complaint" ? "Solution" : "Comment") . "</h5>";
+									echo "<p>" . $row->comment_content . "</p>";
+									echo "<small>" . $row->comment_date . " || " . $post->post_type . " >> " . $post->post_category . "</small>";
+									echo "</div>";
+								} else {
+									if($mod) {
+										echo "<div class='postodd'>";
+										echo "<h4><a href='" . $url . "'>" . $post->post_title . "</a></h4>";
+										echo "<h5>" . ($post->post_type == "Complaint" ? "Solution" : "Comment") . "</h5>";
+										echo "<p>" . $row->comment_content . "</p>";
+										echo "<small>" . $row->comment_date . " || " . $post->post_type . " >> " . $post->post_category . "</small>";
+										echo "</div>";
+									} else {
+										echo "<div class='posteven'>";
+										echo "<h4><a href='" . $url . "'>" . $post->post_title . "</a></h4>";
+										echo "<h5>" . ($post->post_type == "Complaint" ? "Solution" : "Comment") . "</h5>";
+										echo "<p>" . $row->comment_content . "</p>";
+										echo "<small>" . $row->comment_date . " || " . $post->post_type . " >> " . $post->post_category . "</small>";
+										echo "</div>";
+									}
+								}
+							}
+						} else {
+							echo "<p>You haven't posted any solution/comment";
+						}
+						?>
+						<!-- <div class="postodd posttop">
 							<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
 							<h5>comment</h5>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
@@ -286,7 +339,8 @@ $jumlah = $social+$economy+$infra+$tourism;
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 								ac turpis egestas.</p>
 							<small>24 mei 2015 || Review >> Tourism</small>
-						</div>
+						</div> -->
+
 					</div>
 					<div class="tab-pane solution post-form" id="post">
 						<div class="well">
