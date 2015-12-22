@@ -115,6 +115,8 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 
 		});
 	</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "9e32029d-2a34-459d-a265-41b9a3f24b00", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 <body>
 <section class="infrastructure">
@@ -223,9 +225,10 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 				<div class="best-solusion"><?php echo $jumlah . " " . ($post->post_type == "Complaint" ? "Solution" : "Comment") ?></div>
 				<div class="sosmed">
 					<div class="sosmed-head">Share</div>
-					<img src="img/fb.png" alt="">
-					<img src="img/twt.png" alt="">
-					<img src="img/gog.png" alt="">
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_twitter_large' displayText='Tweet'></span>
+						<span class='st__large' displayText=''></span>
 				</div>
 			</div>
 			<?php
