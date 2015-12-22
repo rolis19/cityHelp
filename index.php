@@ -60,11 +60,11 @@
 						<h1>Step to Change your city </h1>
 						<p>Langkah awal untuk menuju Semarang yang lebih baik, diawali dari diri kita sendiri, mari ikut berkontribusi untuk menuju Semarang yang 
 						lebih baik. Melalui sistem yang telah kami buat</br><strong><font size='5'> SEMARANG SETARA </font></strong> </p>
-						<a href="#" class="btn btn-success btn-lg">How it works</i></a>
+						<a href="#" class="btn btn-success btn-lg">Ketahui Cara Kerja</i></a>
 					</div>
 					<div class="user">
-						<a href="#modal-sign" role="button" data-toggle="modal">SIGN UP</a>
-						<a href="#modal-login" role="button" data-toggle="modal">LOGIN</a>
+						<a href="#modal-sign" role="button" data-toggle="modal">DAFTAR</a>
+						<a href="#modal-login" role="button" data-toggle="modal">MASUK</a>
 						<img src="img/user.png" alt="" width="50px">
 					</div>
 				</div>
@@ -76,10 +76,10 @@
 			<div class="container-fluid">
 			<div class="logo"><a href="index.html"><img src="img/logo.png" width="200px" style="float: left"></a></div>
 				<ul class="nav navbar-nav navbar-right">
-					<li role="presentation"><a href="social.html">Social</a></li>
-					<li role="presentation"><a href="infrastructure.html">Infrastructur</a></li>
-					<li role="presentation"><a href="economy.html">Economy</a></li>
-					<li role="presentation"><a href="tourism.html">Tourism</a></li>			
+					<li role="presentation"><a href="social.html">Sosial</a></li>
+					<li role="presentation"><a href="infrastructure.html">Infrastruktur</a></li>
+					<li role="presentation"><a href="economy.html">Ekonomi</a></li>
+					<li role="presentation"><a href="tourism.html">Wisata</a></li>			
 				</ul>
 			</div>
 		</nav>
@@ -107,25 +107,25 @@
 					</div>
 					<div class="col-md-6">
 						<div class="ctpi">
-							<p> Category </p>
-							<p> Type </p>
-							<p> Posted by </p>
-							<p> In Charge </p>
+							<p> Kategori </p>
+							<p> Jenis </p>
+							<p> Di Unggah oleh </p>
+							<p> Ditujukan </p>
 						</div>
 						<div class="pcag">
 							<p> Pariwisata </p>
-							<p> Complain </p>
+							<p> Keluhan </p>
 							<p> Bima Yudi Prasetya </p>
-							<p> Social </p>
+							<p> Sosial </p>
 						</div>
 						<div class="clearfix"></div>
 						<div class="prob">
-							<h3> Problem Title </h3>
+							<h3> Judul Permasalahan </h3>
 							<p>Jalan menuju Ngrembel Asri, Gunung Pati banyak yang rusak, waktu itu saya melihat ada pengendara motor yang terjatuh karena jalan tersebut. Untung saja korban hanya mengalami luka ringan dan segera diberi P3K oleh warga sekitar. </p>
 						</div>
-							<p><small>*see all responder detail and decision</small></p>
+							<p><small>*lihat semua detil responden dan keputusan</small></p>
 
-							<a href="post-detail.html" class="btn btn-success btn-lg">READ MORE</a>
+							<a href="post-detail.html" class="btn btn-success btn-lg">Selengkapnya</a>
 					</div>
 				</div>
 			</div>
@@ -133,7 +133,7 @@
 				<div class="row feature-child">
 					<div class="col-md-4">
 						<h4>Judul 2</h4>
-						<small>category : Social</small>
+						<small>Kategori : Social</small>
 						<hr>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -142,7 +142,7 @@
 					</div>
 					<div class="col-md-4">
 						<h4>Judul 3</h4>
-						<small>category : Infrastruktur</small>
+						<small>Kategori : Infrastruktur</small>
 						<hr>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -151,7 +151,7 @@
 					</div>
 					<div class="col-md-4">
 						<h4>Judul 4</h4>
-						<small>category : Economy</small>
+						<small>Kategori : Economy</small>
 						<hr>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -168,7 +168,7 @@
 					<div class="col-md-6">
 						<h2> Semarang </h2>
 						<p> "Semarang Setara" merupakan  slogan Kota Semarang  untuk mempermudah seluruh pemangku kepentingan pembangunan mengimplementasikan perwujudan visi dan misi Kota Semarang 2010 - 2015. Makna yang terkandung dalam slogan tersebut bahwa Kota Semarang sudah waktunya memiliki kedudukan yang setara dengan kota metropolitan lainnya.</p>
-						<a href="profil-semarang.html" type="button" class="btn btn-success"> Read City Profile </a>
+						<a href="profil-semarang.html" type="button" class="btn btn-success"> Baca profil kota </a>
 					</div>
  					 <div class="cuaca col-md-6 text-center" style="margin-top: 50px">
 						<iframe id="forecast_embed" type="text/html" frameborder="0" height="225" width="100%" 
@@ -194,7 +194,7 @@
 							<button type="submit" id="submit-email" class="btn btn-success btn-lg">SIGN UP</button>
 						</form>
 						<hr width="60%">
-						<p>USE SIGN UP ALTERNATIVE</p>
+						<p>GUNAKAN MENDAFTAR ALTERNATIF</p>
 						<div class="sosmed">
 							<img src="img/fb.png" alt="">
 						</div>
@@ -215,10 +215,10 @@
 								<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME" name="username">
 								<input type="password" id="form-elem-1" class="form-control" placeholder="PASSWORD" name="password">
 							</div>
-							<button type="submit" class="btn btn-success btn-lg">SIGN IN</button>
+							<button type="submit" class="btn btn-success btn-lg">MASUK</button>
 						</form>
 						<hr width="60%">
-						<p>USE LOGIN ALTERNATIVE</p>
+						<p>GUNAKAN MASUK ALTERNATIF</p>
 						<div class="sosmed">
 							<img src="img/fb.png" alt="">
 						</div>
@@ -242,7 +242,7 @@
 								<input type="password" name="pass" id="pass" onkeyup="validate()" class="form-control" placeholder="Password">
 								<input type="password" name="confirm_pass" id="confirm_pass" onkeyup="validate()" class="form-control" placeholder="Confirm Password">
 							</div>
-							<button type="submit" class="btn btn-success btn-lg">SIGN UP</button>
+							<button type="submit" class="btn btn-success btn-lg">DAFTAR</button>
 						</form>
 						<hr width="60%">
 	                </div>
@@ -255,36 +255,36 @@
 				<ul>
 					<li> Jl.Imam Bonjol No. 207 </li>
 					<li> SEMARANG </li>
-					<li> Central Java </li>
+					<li> Jawa Tengah </li>
 					<li> (024)3517261 </li>
 				</ul>
 			</div>			
 			<div class="col-md-2">
 				<ul>
-					<li><a href="#about.html"> About </a> </li>
-					<li><a href="#help.html"> Help </a> </li>
-					<li><a href="#terms.html"> Terms </a> </li>
-					<li><a href="#privacy.html"> Privacy </a> </li>
+					<li><a href="#about.html"> Tentang </a> </li>
+					<li><a href="#help.html"> Bantuan </a> </li>
+					<li><a href="#terms.html"> Istilah </a> </li>
+					<li><a href="#privacy.html"> Privasi </a> </li>
 				</ul>
 			</div>
 			<div class="col-md-2">
 				<ul>
 					<li><a href="#teams.html"> Teams </a> </li>
-					<li><a href="#advertise.html"> Advertise</a> </li>
-					<li><a href="#terms.html"> Terms</a> </li>
-					<li><a href="#privacy.html"> Privacy </a> </li>
+					<li><a href="#advertise.html"> Periklanan </a> </li>
+					<li><a href="#terms.html"> Istilah </a> </li>
+					<li><a href="#privacy.html"> Privasi </a> </li>
 				</ul>
 			</div>
 			<div class="col-md-2">
 				<ul>
-					<li>Follow us </li>
+					<li>Ikuti kami </li>
 					<li><a href="#"> Facebook</a> </li>
 					<li><a href="#"> Twitter</a> </li>
 					<li><a href="#"> Instagram </a> </li>
 				</ul>
 			</div>
 			<div class="col-md-12 copyright">
-				<p> Copyright @ SmartCity 2016-2017 </p>
+				<p> Hak Cipta @ SmartCity 2016-2017 </p>
 			</div>
 		</footer>
 	<script src="js/jquery.waypoints.js"></script>
