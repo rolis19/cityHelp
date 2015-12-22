@@ -1,6 +1,9 @@
 <?php
 include_once 'connection.php';
 session_start();
+if(!isset($_GET['post_id'])) {
+	header("location:../");
+}
 $id = $_GET['post_id'];
 $sql = mysql_query("SELECT * FROM post WHERE post_id='$id'");
 $post = mysql_fetch_object($sql);
@@ -12,13 +15,13 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 <head>
 	<title><?php echo $post->post_title; ?> - Smart City</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/post-detail.css">
 	<link rel="stylesheet"  href="css/lightslider.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/lightslider.js"></script>
 
 	<script>
@@ -115,6 +118,8 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 
 		});
 	</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "9e32029d-2a34-459d-a265-41b9a3f24b00", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 <body>
 <section class="infrastructure">
@@ -223,14 +228,17 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 				<div class="best-solusion"><?php echo $jumlah . " " . ($post->post_type == "Complaint" ? "Solution" : "Comment") ?></div>
 				<div class="sosmed">
 					<div class="sosmed-head">Share</div>
-					<img src="img/fb.png" alt="">
-					<img src="img/twt.png" alt="">
-					<img src="img/gog.png" alt="">
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_twitter_large' displayText='Tweet'></span>
+						<span class='st__large' displayText=''></span>
 				</div>
 			</div>
 			<?php
 			if($_SESSION['login']) {
 				echo "<a href='#modal-solusi' role='button' data-toggle='modal' class='btn btn-success btn-lg'>Give " . ($post->post_type == "Complaint" ? "Solution" : "Comment") . "</a>";
+			} else {
+				echo "<a href='#modal-login' role='button' data-toggle='modal' class='btn btn-success btn-lg'>Login untuk memberi " . ($post->post_type == "Complaint" ? "Solusi" : "Komentar") . "</a>";
 			}
 			?>
 		</div>
@@ -259,7 +267,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 					echo "</p>";
 					echo "<div class='pool pull-right'>";
 					echo "<p>";
-					echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<a href='#'>Setuju</a>") : "");
+					echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<button type='button' id='like'>Like</button>") : "");
 					echo "</p>";
 					echo "</div>";
 					echo "</div>";
