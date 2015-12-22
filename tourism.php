@@ -7,12 +7,12 @@ session_start();
 <head>
 	<title>Tourism - Smart City</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/tourism.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#validation').submit(function(event) {
@@ -99,10 +99,10 @@ session_start();
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="social.html">Social</a></li>
-					<li><a href="infrastructure.html">Infrastructure</a></li>
-					<li><a href="economy.html">Economy</a></li>
-					<li class="active"><a href="tourism.html">Tourism</a></li>
+					<li><a href="social.php">Social</a></li>
+					<li><a href="infrastructure.php">Infrastructure</a></li>
+					<li><a href="economy.php">Economy</a></li>
+					<li class="active"><a href="tourism.php">Tourism</a></li>
 				</ul>
 			</div>
 		</div>

@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#validation').submit(function(event) {
@@ -60,7 +60,7 @@
 				<h1>Step to Change your city </h1>
 				<p>Langkah awal untuk menuju Semarang yang lebih baik, diawali dari diri kita sendiri, mari ikut berkontribusi untuk menuju Semarang yang
 					lebih baik. Melalui sistem yang telah kami buat</br><strong><font size='5'> SEMARANG SETARA </font></strong> </p>
-				<a href="#" class="btn btn-success btn-lg">Ketahui Cara Kerja</i></a>
+				<a href="cara-kerja.html" class="btn btn-success btn-lg">Ketahui Cara Kerja</i></a>
 			</div>
 			<div class="user">
 				<a href="#modal-sign" role="button" data-toggle="modal">DAFTAR</a>

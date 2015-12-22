@@ -223,5 +223,10 @@ footer ul li {
 }
 .info-happy {
 	width: 60%;
+	padding-bottom: 50px;
 	margin: 0 auto;
+}
+.tourism-data hr {
+	width: 60%;
+	float: right;
 }

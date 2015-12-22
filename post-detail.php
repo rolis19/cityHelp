@@ -15,13 +15,13 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 <head>
 	<title><?php echo $post->post_title; ?> - Smart City</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/post-detail.css">
 	<link rel="stylesheet"  href="css/lightslider.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/lightslider.js"></script>
 
 	<script>
@@ -118,6 +118,8 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 
 		});
 	</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "9e32029d-2a34-459d-a265-41b9a3f24b00", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 <body>
 <section class="infrastructure">
@@ -157,7 +159,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 					<span class="icon-bar"></span>
 				</button>
 				<!-- Your Logo -->
-				<div class="logo"><a href="index.html"><img src="img/logo.png" width="200px"></a></div>
+				<div class="logo"><a href="index.php"><img src="img/logo.png" width="200px"></a></div>
 			</div>
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
@@ -188,7 +190,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 							echo "</li>";
 						}
 					} else {
-						echo "<li data-thumb='img/post-img-default.jpg'>";
+						echo "<li data-thumb='img/post-img-default.jpg' class='img-thumbnail'>";
 						echo "<img src='img/post-img-default.jpg'>";
 						echo "</li>";
 					}
@@ -226,9 +228,10 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 				<div class="best-solusion"><?php echo $jumlah . " " . ($post->post_type == "Complaint" ? "Solution" : "Comment") ?></div>
 				<div class="sosmed">
 					<div class="sosmed-head">Share</div>
-					<img src="img/fb.png" alt="">
-					<img src="img/twt.png" alt="">
-					<img src="img/gog.png" alt="">
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_twitter_large' displayText='Tweet'></span>
+						<span class='st__large' displayText=''></span>
 				</div>
 			</div>
 			<?php

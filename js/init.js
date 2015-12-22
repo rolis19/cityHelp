@@ -9,7 +9,11 @@ document.createElement("section");
 $('.tourism').parallax({imageSrc: 'img/tourism.jpg'});
 document.createElement("section");
 
-$('.social').parallax({imageSrc: 'img/'});
+$('.economy').parallax({imageSrc: 'img/economy.jpg'});
+document.createElement("section");
+
+$('.social').parallax({imageSrc: 'img/social.jpg'});
+document.createElement("section");
 
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
