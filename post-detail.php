@@ -174,7 +174,23 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 			<div class="item">
 				<div class="clearfix">
 					<ul id="vertical">
-						<li data-thumb="img/prob1.png">
+					<?php
+					$picture = mysql_fetch_object(mysql_query("SELECT pictures FROM post WHERE post_id='$id'"))->pictures;
+					$decode = json_decode($picture);
+					$num = count($decode);
+					if($num) {
+						foreach($picture as $img) {
+							echo "<li data-thumb='member/gallery/" . $img . "'>";
+							echo "<img src='member/gallery" . $img . "'>";
+							echo "</li>";
+						}
+					} else {
+						echo "<li data-thumb='img/post-img-default.jpg'>";
+						echo "<img src='img/post-img-default.jpg'>";
+						echo "</li>";
+					}
+					?>
+						<!-- <li data-thumb="img/prob1.png">
 							<img src="img/prob1.png">
 						</li>
 						<li data-thumb="img/prob2.png">
@@ -185,8 +201,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 						</li>
 						<li data-thumb="img/prob4.png">
 							<img src="img/prob4.png" />
-						</li>
-
+						</li> -->
 					</ul>
 				</div>
 			</div>

@@ -114,13 +114,6 @@ while($row = mysql_fetch_object($query)) {
 								<li><?php echo $comment; ?> komentar</li>
 							</ul>
 						</div>
-						<div class="col-sm-6">
-							<ul>
-								<li>Total</li>
-								<li>20 Solution</li>
-								<li>30 komentar</li>
-							</ul>
-						</div>
 
 						<div class="col-sm-12 prog-bar">
 							<hr>
@@ -326,21 +319,6 @@ while($row = mysql_fetch_object($query)) {
 							echo "<p>You haven't posted any solution/comment";
 						}
 						?>
-						<!-- <div class="postodd posttop">
-							<h4><a href="#">Stasiun Tawang rapi dan bersih</a></h4>
-							<h5>comment</h5>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-								ac turpis egestas.</p>
-							<small>20 mei 2015 || Update >> Infrastrktur</small>
-						</div>
-						<div class="posteven">
-							<h4><a href="#">Trip ke Goa Kreo</a></h4>
-							<h5>Solution</h5>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-								ac turpis egestas.</p>
-							<small>24 mei 2015 || Review >> Tourism</small>
-						</div> -->
-
 					</div>
 					<div class="tab-pane solution post-form" id="post">
 						<div class="well">
