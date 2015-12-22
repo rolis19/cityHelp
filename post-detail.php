@@ -179,7 +179,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 					$decode = json_decode($picture);
 					$num = count($decode);
 					if($num) {
-						foreach($picture as $img) {
+						foreach($decode as $img) {
 							echo "<li data-thumb='member/gallery/" . $img . "'>";
 							echo "<img src='member/gallery" . $img . "'>";
 							echo "</li>";
