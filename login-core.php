@@ -1,6 +1,7 @@
 <?php
 	require_once 'connection.php';
 	session_start();
+	$referrer = mysql_real_escape_string($_SERVER['HTTP_REFERER']);
 	$user = mysql_real_escape_string($_POST['username']);
 	$pass = mysql_real_escape_string($_POST['password']);
 	$secretkey = "smartcity";
@@ -12,7 +13,7 @@
 		$_SESSION['login'] = true;
 		$_SESSION['type'] = "user";
 		$_SESSION['username'] = $user;
-		header('location:member/');
+		header('location:' . $referrer);
 	} else {
 		header('location:index.php');
 	}

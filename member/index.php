@@ -52,6 +52,26 @@ while($row = mysql_fetch_object($query)) {
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/member.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			if (window.location.hash != "") {
+				$('.nav-tab li').each(function() {
+					$(this).removeClass("active");
+					$('.tab-pane').removeClass("active");
+				});
+
+				$('.nav-tab li').each(function() {
+					var anchor = window.location.hash;
+					var active = $(this).find("a").attr("href");
+					if (active == anchor) {
+						$(this).addClass("active");
+						$(anchor).addClass("active");
+					}
+				});
+			}
+		});
+	</script>
 </head>
 <body>
 <div class="border-green"> </div>
@@ -87,7 +107,7 @@ while($row = mysql_fetch_object($query)) {
 		<div class="row">
 			<div class="col-md-4 profile-area1">
 				<img src="profile/<?php echo $profile->picture ?>" alt="">
-				<ul class="nav nav-pills nav-stacked">
+				<ul class="nav nav-pills nav-stacked nav-tab">
 					<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
 					<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
 					<li><a href="#posted" data-toggle="pill">Post List</a></li>
@@ -427,7 +447,6 @@ while($row = mysql_fetch_object($query)) {
 		<p> Copyright @ SmartCity 2016-2017 </p>
 	</div>
 </footer>
-<script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery.waypoints.js"></script>
 <script src="../js/parallax.js"></script>

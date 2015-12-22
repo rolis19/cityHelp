@@ -1,6 +1,9 @@
 <?php
 include_once 'connection.php';
 session_start();
+if(!isset($_GET['post_id'])) {
+	header("location:../");
+}
 $id = $_GET['post_id'];
 $sql = mysql_query("SELECT * FROM post WHERE post_id='$id'");
 $post = mysql_fetch_object($sql);
@@ -231,6 +234,8 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 			<?php
 			if($_SESSION['login']) {
 				echo "<a href='#modal-solusi' role='button' data-toggle='modal' class='btn btn-success btn-lg'>Give " . ($post->post_type == "Complaint" ? "Solution" : "Comment") . "</a>";
+			} else {
+				echo "<a href='#modal-login' role='button' data-toggle='modal' class='btn btn-success btn-lg'>Login untuk memberi " . ($post->post_type == "Complaint" ? "Solusi" : "Komentar") . "</a>";
 			}
 			?>
 		</div>
@@ -259,7 +264,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 					echo "</p>";
 					echo "<div class='pool pull-right'>";
 					echo "<p>";
-					echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<a href='#'>Setuju</a>") : "");
+					echo ($_SESSION['login'] ? ($type == "Complaint" ? "<button type='button' id='like'>Setuju</button> | <button type='button' id='dislike'>Tidak Setuju</button>" : "<button type='button' id='like'>Like</button>") : "");
 					echo "</p>";
 					echo "</div>";
 					echo "</div>";
