@@ -3,11 +3,13 @@
 }
 
 .hero {
-	margin: 5px auto 2px;
+	margin: 5px auto 20px;
 }
 .categ-menu {
 	padding-bottom: 20px;
 }
+.border-green {
+	margin-top: 40px;
 }
 .categ-menu a {
 	color: #01C26F;
