@@ -60,7 +60,7 @@
 				<h1>Step to Change your city </h1>
 				<p>Langkah awal untuk menuju Semarang yang lebih baik, diawali dari diri kita sendiri, mari ikut berkontribusi untuk menuju Semarang yang
 					lebih baik. Melalui sistem yang telah kami buat</br><strong><font size='5'> SEMARANG SETARA </font></strong> </p>
-				<a href="#" class="btn btn-success btn-lg">Ketahui Cara Kerja</i></a>
+				<a href="cara-kerja.html" class="btn btn-success btn-lg">Ketahui Cara Kerja</i></a>
 			</div>
 			<div class="user">
 				<a href="#modal-sign" role="button" data-toggle="modal">DAFTAR</a>
