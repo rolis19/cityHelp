@@ -84,6 +84,7 @@
 					echo "<li class='dropdown-header'>$profile->username</li>";
 					echo "<li><a href='member/#editprof'>Edit Profile</a></li>";
 					echo "<li><a href='#'>Resolution</a></li>";
+					echo "<li><a href='logout.php'>Log out</a></li>";
 					echo "<li></li>";
 					echo "</ul>";
 					echo "</span>";

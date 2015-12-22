@@ -92,10 +92,10 @@ while($row = mysql_fetch_object($query)) {
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="../loged.html">Social</a></li>
-					<li><a href="../loged.html">Infrastructure</a></li>
-					<li><a href="../loged.html">Economy</a></li>
-					<li><a href="../loged.html">Tourism</a></li>
+					<li><a href="../social.php">Social</a></li>
+					<li><a href="../infrastructure.php">Infrastructure</a></li>
+					<li><a href="../economy.php">Economy</a></li>
+					<li><a href="../tourism.php">Tourism</a></li>
 				</ul>
 			</div>
 		</div>
