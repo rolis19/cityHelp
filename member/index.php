@@ -107,12 +107,12 @@ while($row = mysql_fetch_object($query)) {
 		<div class="row">
 			<div class="col-md-4 profile-area1">
 				<img src="profile/<?php echo $profile->picture ?>" alt="">
-				<ul class="nav nav-pills nav-stacked nav-tab">
-					<li class="active"><a href="#about" data-toggle="pill">About me</a></li>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#about" data-toggle="pill">Tentang Saya</a></li>
 					<li><a href="#editprof" data-toggle="pill">Edit Profile</a></li>
 					<li><a href="#posted" data-toggle="pill">Post List</a></li>
 					<li><a href="#post" data-toggle="pill">Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
-					<li><a href="#solution" data-toggle="pill">Solution & comments</a></li>
+					<li><a href="#solution" data-toggle="pill">Solusi & Komentar</a></li>
 				</ul>
 			</div>
 			<div class="col-md-8 profile-area2">
