@@ -54,7 +54,9 @@
 
 /*---- Sidebar Start here ----------*/
 .sidebar {
-	height: 480px;
+	height: auto;
+	padding: 50px 20px;
+	border-left: 1px solid #DDD;
 }
 .sidebar ul {
 	margin-top: 18px;
