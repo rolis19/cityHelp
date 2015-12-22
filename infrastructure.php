@@ -132,9 +132,8 @@ session_start();
 					echo "</table>";
 					echo "</div>";
 					echo "<div class='panel-footer text-center'>";
-					echo "<small class='solution'>$jumlah <br>". ($row->post_type == "Complaint" ? "Solution" : "Comment") . "</small>";
-					echo "<a href='post/$row->post_id' class='readmore'>Read More</a>";
-					echo "<small class='respond'>2000<br>responder</small>";
+					echo "<small class='solution'>$jumlah ". ($row->post_type == "Complaint" ? "Solution" : "Comment") . "</small>";
+					echo "<a href='post/$row->post_id' class='readmore pull-right'>Read More</a>";
 					echo "</div>";
 					echo "</div>";
 				}
@@ -179,10 +178,6 @@ session_start();
 					<button type="submit" id="submit-email" class="btn btn-success btn-lg">SIGN UP</button>
 				</form>
 				<hr width="60%">
-				<p>USE SIGN UP ALTERNATIVE</p>
-				<div class="sosmed">
-					<img src="img/fb.png" alt="">
-				</div>
 			</div>
 		</div>
 	</div>
@@ -203,10 +198,6 @@ session_start();
 					<button type="submit" class="btn btn-success btn-lg">SIGN IN</button>
 				</form>
 				<hr width="60%">
-				<p>USE LOGIN ALTERNATIVE</p>
-				<div class="sosmed">
-					<img src="img/fb.png" alt="">
-				</div>
 			</div>
 		</div>
 	</div>

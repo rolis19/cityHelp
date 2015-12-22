@@ -222,10 +222,6 @@
 					<button type="submit" id="submit-email" class="btn btn-success btn-lg">SIGN UP</button>
 				</form>
 				<hr width="60%">
-				<p>GUNAKAN MENDAFTAR ALTERNATIF</p>
-				<div class="sosmed">
-					<img src="img/fb.png" alt="">
-				</div>
 			</div>
 		</div>
 	</div>
@@ -246,10 +242,6 @@
 					<button type="submit" class="btn btn-success btn-lg">MASUK</button>
 				</form>
 				<hr width="60%">
-				<p>GUNAKAN MASUK ALTERNATIF</p>
-				<div class="sosmed">
-					<img src="img/fb.png" alt="">
-				</div>
 			</div>
 		</div>
 	</div>
