@@ -185,7 +185,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 							echo "</li>";
 						}
 					} else {
-						echo "<li data-thumb='img/post-img-default.jpg'>";
+						echo "<li data-thumb='img/post-img-default.jpg' class='img-thumbnail'>";
 						echo "<img src='img/post-img-default.jpg'>";
 						echo "</li>";
 					}
