@@ -159,10 +159,10 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="social.html">Social</a></li>
-					<li><a href="infrastructure.html">Infrastructure</a></li>
-					<li><a href="economy.html">Economy</a></li>
-					<li><a href="tourism.html">Tourism</a></li>
+					<li><a href="../social.php">Social</a></li>
+					<li><a href="../infrastructure.php">Infrastructure</a></li>
+					<li><a href="../economy.php">Economy</a></li>
+					<li><a href="../tourism.php">Tourism</a></li>
 				</ul>
 			</div>
 		</div>
@@ -181,7 +181,7 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 					if($num) {
 						foreach($decode as $img) {
 							echo "<li data-thumb='member/gallery/" . $img . "'>";
-							echo "<img src='member/gallery" . $img . "'>";
+							echo "<img src='member/gallery/" . $img . "'>";
 							echo "</li>";
 						}
 					} else {
@@ -190,19 +190,6 @@ $jumlah = mysql_fetch_object($sql)->jumlah;
 						echo "</li>";
 					}
 					?>
-						<!-- <li data-thumb="img/prob1.png">
-							<img src="img/prob1.png">
-						</li>
-						<li data-thumb="img/prob2.png">
-							<img src="img/prob2.png" />
-						</li>
-						<li data-thumb="img/prob3.png">
-							<img src="img/prob3.png" />
-						</li>
-						<li data-thumb="img/prob4.png">
-							<img src="img/prob4.png" />
-						</li> -->
-					</ul>
 				</div>
 			</div>
 		</div>
