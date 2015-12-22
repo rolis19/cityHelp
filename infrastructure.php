@@ -116,6 +116,7 @@ session_start();
 			<?php
 				$query = mysql_query("SELECT * FROM post WHERE post_category='Infrastructure'");
 				while($row = mysql_fetch_object($query)) {
+					$jumlah = mysql_fetch_object(mysql_query("SELECT COUNT(*) num FROM comment WHERE post_id='$row->post_id'"))->num;
 					$pic = json_decode($row->pictures);
 					$img = $pic['0'];
 					echo "<div class='col-md-6'>";
@@ -131,8 +132,8 @@ session_start();
 					echo "</table>";
 					echo "</div>";
 					echo "<div class='panel-footer text-center'>";
-					echo "<small class='solution'>4 <br>Solution</small>"; // get from comment later
-					echo "<a href='#' class='readmore'>Read More</a>";
+					echo "<small class='solution'>$jumlah <br>". ($row->post_type == "Complaint" ? "Solution" : "Comment") . "</small>";
+					echo "<a href='post/$row->post_id' class='readmore'>Read More</a>";
 					echo "<small class='respond'>2000<br>responder</small>";
 					echo "</div>";
 					echo "</div>";
@@ -276,5 +277,3 @@ session_start();
 <script src="js/init.js"></script>
 </body>
 </html>
-
-

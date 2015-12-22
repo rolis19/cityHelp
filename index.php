@@ -159,35 +159,6 @@
 		echo "</div>";
 		echo "</div>";
 	?>
-	<!-- <div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<img src="img/Broken-Road.jpg" alt="" class="img-responsive img-thumbnail">
-			</div>
-			<div class="col-md-6">
-				<div class="ctpi">
-					<p> Kategori </p>
-					<p> Jenis </p>
-					<p> Di Unggah oleh </p>
-					<p> Ditujukan </p>
-				</div>
-				<div class="pcag">
-					<p> Pariwisata </p>
-					<p> Keluhan </p>
-					<p> Bima Yudi Prasetya </p>
-					<p> Sosial </p>
-				</div>
-				<div class="clearfix"></div>
-				<div class="prob">
-					<h3> Judul Permasalahan </h3>
-					<p>Jalan menuju Ngrembel Asri, Gunung Pati banyak yang rusak, waktu itu saya melihat ada pengendara motor yang terjatuh karena jalan tersebut. Untung saja korban hanya mengalami luka ringan dan segera diberi P3K oleh warga sekitar. </p>
-				</div>
-				<p><small>*lihat semua detil responden dan keputusan</small></p>
-
-				<a href="post-detail.html" class="btn btn-success btn-lg">Selengkapnya</a>
-			</div>
-		</div>
-	</div> -->
 	<div class="container">
 		<div class="row feature-child">
 			<?php
@@ -215,33 +186,6 @@
 					echo "</div>";
 				}
 			?>
-			<!-- <div class="col-md-4">
-				<h4>Judul 2</h4>
-				<small>Kategori : Social</small>
-				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation</p>
-				<p><a href="" class="btn btn-success">Selengkapnya</a></p>
-			</div>
-			<div class="col-md-4">
-				<h4>Judul 3</h4>
-				<small>Kategori : Infrastruktur</small>
-				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation</p>
-				<p><a href="" class="btn btn-success">Selengkapnya</a></p>
-			</div>
-			<div class="col-md-4">
-				<h4>Judul 4</h4>
-				<small>Kategori : Economy</small>
-				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation</p>
-				<p><a href="" class="btn btn-success">Selengkapnya</a></p>
-			</div> -->
 		</div>
 	</div>
 </div>

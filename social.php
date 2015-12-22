@@ -110,6 +110,7 @@ session_start();
 			<?php
 				$query = mysql_query("SELECT * FROM post WHERE post_category='Social'");
 				while($row = mysql_fetch_object($query)) {
+					$jumlah = mysql_fetch_object(mysql_query("SELECT COUNT(*) num FROM comment WHERE post_id='$row->post_id'"))->num;
 					$pic = json_decode($row->pictures);
 					$img = $pic['0'];
 					echo "<div class='col-md-6'>";
@@ -125,67 +126,13 @@ session_start();
 					echo "</table>";
 					echo "</div>";
 					echo "<div class='panel-footer text-center'>";
-					echo "<small class='solution'>4 <br>Solution</small>"; // get from comment later
-					echo "<a href='#' class='readmore'>Read More</a>";
+					echo "<small class='solution'>$jumlah <br>". ($row->post_type == "Complaint" ? "Solution" : "Comment") . "</small>";
+					echo "<a href='post/$row->post_id' class='readmore'>Read More</a>";
 					echo "<small class='respond'>2000<br>responder</small>";
 					echo "</div>";
 					echo "</div>";
 				}
 			?>
-			<!-- <div class="col-md-6">
-				<h3>Judul 1</h3>
-				<small>Infrastructure // Review</small>
-				<div class="panel-body">
-					<img src="img/infra-transportation.jpg"  alt="" class="img-responsive img-thumbnail">
-					<table>
-						<tr>
-							<td class="headli">Posted by: </td>
-							<td>Edo Erdian	</td>
-						</tr>
-					</table>
-				</div>
-				<div class="panel-footer text-center">
-					<small class="solution">4 <br>Solution</small>
-					<a href="#" class="readmore">Read More</a>
-					<small class="respond">2000 <br> responder</small>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<h3>Judul 2</h3>
-				<small>Infrastructure // Review</small>
-				<div class="panel-body">
-					<img src=" img/infra-city.jpg"   alt="" class="img-responsive img-thumbnail">
-					<table>
-						<tr>
-							<td class="headli">Posted by: </td>
-							<td>Edo Erdian	</td>
-						</tr>
-					</table>
-				</div>
-				<div class="panel-footer text-center">
-					<small class="solution">4 <br>Solution</small>
-					<a href="#" class="readmore">Read More</a>
-					<small class="respond">2000 <br> responder</small>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<h3>Judul 3 </h3>
-				<small>Infrastructure // Review</small>
-				<div class="panel-body">
-					<img src="img/prob2.png" alt="" class="img-responsive img-thumbnail">
-					<table>
-						<tr>
-							<td class="headli">Posted by: </td>
-							<td>Edo Erdian	</td>
-						</tr>
-					</table>
-				</div>
-				<div class="panel-footer text-center">
-					<small class="solution">4 <br>Solution</small>
-					<a href="#" class="readmore">Read More</a>
-					<small class="respond">2000 <br> responder</small>
-				</div>
-			</div> -->
 		</div>
 
 		<div class="col-md-3 col-md-offset-1 sidebar">
@@ -310,5 +257,3 @@ session_start();
 <script src="js/init.js"></script>
 </body>
 </html>
-
-
