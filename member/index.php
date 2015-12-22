@@ -113,6 +113,7 @@ while($row = mysql_fetch_object($query)) {
 					<li><a href="#posted" data-toggle="pill">Post List</a></li>
 					<li><a href="#post" data-toggle="pill">Buat Post <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
 					<li><a href="#solution" data-toggle="pill">Solusi & Komentar</a></li>
+					<li><a href="#" data-toggle="pill">Logout <span class="glyphicon glyphicon-share-alt"></span></a></li>
 				</ul>
 			</div>
 			<div class="col-md-8 profile-area2">
