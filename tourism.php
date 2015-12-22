@@ -99,10 +99,10 @@ session_start();
 			<!-- Start Navigation -->
 			<div class="collapse navbar-collapse" id="collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="social.html">Social</a></li>
-					<li><a href="infrastructure.html">Infrastructure</a></li>
-					<li><a href="economy.html">Economy</a></li>
-					<li class="active"><a href="tourism.html">Tourism</a></li>
+					<li><a href="social.php">Social</a></li>
+					<li><a href="infrastructure.php">Infrastructure</a></li>
+					<li><a href="economy.php">Economy</a></li>
+					<li class="active"><a href="tourism.php">Tourism</a></li>
 				</ul>
 			</div>
 		</div>

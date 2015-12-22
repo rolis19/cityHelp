@@ -57,7 +57,7 @@ session_start();
 	</script>
 </head>
 <body>
-<section class="infrastructure" data-parallax="scroll">
+<section class="economy" data-parallax="scroll">
 	<div class="container-fluid">
 		<div class="row main-header">
 			<div class="hero text-center">
